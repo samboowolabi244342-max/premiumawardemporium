@@ -12,7 +12,6 @@
       --purple-light: #9B59D0;
       --purple-dark: #4A1080;
       --purple-glow: rgba(123,47,190,0.3);
-      --gold: #C9A84C;
       --black: #050505;
       --dark: #0D0D0D;
       --card: #0F0F1A;
@@ -21,190 +20,130 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
 
-    /* PURPLE PARTICLES */
     .particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-    .particle {
-      position: absolute; width: 2px; height: 2px;
-      background: var(--purple-light); border-radius: 50%; opacity: 0;
-      animation: float-up linear infinite;
-    }
-    @keyframes float-up {
-      0% { transform: translateY(100vh); opacity: 0; }
-      10% { opacity: 0.5; }
-      90% { opacity: 0.1; }
-      100% { transform: translateY(-100px); opacity: 0; }
-    }
+    .particle { position: absolute; width: 2px; height: 2px; background: var(--purple-light); border-radius: 50%; opacity: 0; animation: float-up linear infinite; }
+    @keyframes float-up { 0%{transform:translateY(100vh);opacity:0} 10%{opacity:0.5} 90%{opacity:0.1} 100%{transform:translateY(-100px);opacity:0} }
 
-    /* NAVBAR */
     nav {
-      padding: 18px 5%;
-      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 5%; display: flex; justify-content: space-between; align-items: center;
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(5,5,5,0.95);
-      backdrop-filter: blur(20px);
+      background: rgba(5,5,5,0.97); backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(123,47,190,0.2);
     }
     .logo-wrap { display: flex; flex-direction: column; }
-    .logo-main {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--purple-light);
-      letter-spacing: 3px; text-transform: uppercase;
-      text-shadow: 0 0 20px var(--purple-glow);
-    }
+    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--purple-light); letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 0 20px var(--purple-glow); }
     .logo-sub { font-size: 8px; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 2px; }
-    .nav-links { list-style: none; display: flex; gap: 25px; }
+    .nav-links { list-style: none; display: flex; gap: 25px; align-items: center; }
     .nav-links a { color: #555; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: var(--purple-light); }
-    .nav-cta {
-      color: var(--purple-light) !important;
-      border: 1px solid var(--purple) !important;
-      padding: 8px 20px; transition: all 0.3s !important;
-    }
+    .nav-cta { color: var(--purple-light) !important; border: 1px solid var(--purple) !important; padding: 8px 20px; transition: all 0.3s !important; }
     .nav-cta:hover { background: var(--purple) !important; color: white !important; }
 
-    /* HERO */
+    /* SEARCH BAR */
+    .search-wrap {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(123,47,190,0.08); border: 1px solid rgba(123,47,190,0.2);
+      padding: 8px 16px; border-radius: 3px;
+    }
+    .search-wrap input {
+      background: none; border: none; outline: none;
+      color: white; font-size: 12px; font-family: 'Montserrat', sans-serif;
+      width: 180px; letter-spacing: 1px;
+    }
+    .search-wrap input::placeholder { color: #333; }
+    .search-wrap i { color: var(--purple-light); font-size: 13px; }
+
     .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 120px 5% 80px;
-      position: relative; overflow: hidden;
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 120px 5% 80px; position: relative; overflow: hidden;
     }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(123,47,190,0.08) 0%, transparent 65%);
-    }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(123,47,190,0.08) 0%, transparent 65%); }
     .hero-line { width: 1px; height: 70px; background: linear-gradient(to bottom, transparent, var(--purple-light), transparent); margin: 0 auto 35px; }
     .hero-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: var(--purple-light); margin-bottom: 20px; position: relative; z-index: 1; }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(38px, 6vw, 82px); font-weight: 300;
-      line-height: 1.1; color: var(--white); margin-bottom: 15px;
-      position: relative; z-index: 1; letter-spacing: 2px;
-    }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 6vw, 82px); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 15px; position: relative; z-index: 1; letter-spacing: 2px; }
     .hero h1 span { color: var(--purple-light); font-style: italic; }
-    .hero-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(14px, 2vw, 20px); font-style: italic;
-      color: #555; margin-bottom: 45px; position: relative; z-index: 1;
-    }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 2vw, 20px); font-style: italic; color: #555; margin-bottom: 45px; position: relative; z-index: 1; }
     .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
-    .btn-purple {
-      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-      color: white; padding: 15px 38px; font-size: 11px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase; text-decoration: none;
-      transition: all 0.3s; display: inline-block;
-    }
+    .btn-purple { background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: white; padding: 15px 38px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; display: inline-block; }
     .btn-purple:hover { transform: translateY(-2px); box-shadow: 0 10px 30px var(--purple-glow); }
-    .btn-outline {
-      background: transparent; color: var(--purple-light);
-      border: 1px solid var(--purple); padding: 15px 38px;
-      font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; text-decoration: none;
-      transition: all 0.3s; display: inline-block;
-    }
+    .btn-outline { background: transparent; color: var(--purple-light); border: 1px solid var(--purple); padding: 15px 38px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; display: inline-block; }
     .btn-outline:hover { background: var(--purple); color: white; }
 
-    /* STATS */
-    .stats {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      border-top: 1px solid rgba(123,47,190,0.1);
-      border-bottom: 1px solid rgba(123,47,190,0.1);
-    }
-    .stat {
-      padding: 45px 20px; text-align: center;
-      border-right: 1px solid rgba(123,47,190,0.1);
-    }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1px solid rgba(123,47,190,0.1); border-bottom: 1px solid rgba(123,47,190,0.1); }
+    .stat { padding: 45px 20px; text-align: center; border-right: 1px solid rgba(123,47,190,0.1); }
     .stat:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px; font-weight: 300; color: var(--purple-light);
-      text-shadow: 0 0 20px var(--purple-glow);
-      display: block; margin-bottom: 8px;
-    }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--purple-light); text-shadow: 0 0 20px var(--purple-glow); display: block; margin-bottom: 8px; }
     .stat p { color: #333; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+
+    /* SEARCH RESULTS */
+    .search-results { padding: 60px 5% 0; display: none; }
+    .search-results.active { display: block; }
+    .search-results h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--purple-light); margin-bottom: 25px; }
+    .search-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+    .search-item { aspect-ratio: 1; overflow: hidden; cursor: pointer; border: 1px solid rgba(123,47,190,0.1); transition: border-color 0.3s; position: relative; }
+    .search-item:hover { border-color: rgba(123,47,190,0.5); }
+    .search-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .search-item:hover img { transform: scale(1.05); }
+    .search-item-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(5,5,5,0.9); padding: 6px 10px; font-size: 10px; color: var(--purple-light); letter-spacing: 1px; text-transform: uppercase; }
 
     /* CATEGORIES */
     .categories { padding: 100px 5%; }
     .sec-header { text-align: center; margin-bottom: 70px; }
     .sec-tag { color: var(--purple-light); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
-    .sec-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(30px, 4vw, 50px); font-weight: 300; letter-spacing: 2px;
-    }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 50px); font-weight: 300; letter-spacing: 2px; }
     .sec-title span { color: var(--purple-light); font-style: italic; }
     .sec-sub { color: #444; font-size: 13px; margin-top: 12px; line-height: 1.8; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-    /* CATEGORY CARDS */
-    .cat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 3px;
-      background: rgba(123,47,190,0.05);
-    }
-    .cat-card {
-      position: relative; overflow: hidden; height: 300px;
-      cursor: pointer; border: 1px solid rgba(123,47,190,0.05);
-      transition: border-color 0.3s;
-    }
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3px; background: rgba(123,47,190,0.03); }
+    .cat-card { position: relative; overflow: hidden; height: 320px; cursor: pointer; border: 1px solid rgba(123,47,190,0.05); transition: border-color 0.3s; }
     .cat-card:hover { border-color: rgba(123,47,190,0.4); }
-    .cat-card img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.5s; filter: brightness(0.5);
-    }
-    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.6); }
-    .cat-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.3) 60%, transparent 100%);
-      display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;
-      transition: all 0.3s;
-    }
-    .cat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px; font-weight: 300; color: rgba(123,47,190,0.2);
-      position: absolute; top: 15px; right: 20px;
-      transition: color 0.3s;
-    }
-    .cat-card:hover .cat-num { color: rgba(123,47,190,0.5); }
-    .cat-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px; font-weight: 500; color: white;
-      margin-bottom: 8px; letter-spacing: 1px;
-    }
-    .cat-desc { color: #888; font-size: 12px; line-height: 1.6; margin-bottom: 15px; }
-    .cat-count {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--purple-light); font-size: 11px; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase;
-    }
-    .cat-count::before { content: ''; width: 20px; height: 1px; background: var(--purple-light); }
-    .cat-view-btn {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      background: var(--purple); color: white;
-      padding: 12px 25px; font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; opacity: 0; transition: opacity 0.3s;
-      white-space: nowrap;
-    }
-    .cat-card:hover .cat-view-btn { opacity: 1; }
+    .cat-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; filter: brightness(0.45); }
+    .cat-card:hover img { transform: scale(1.05); filter: brightness(0.55); }
+    .cat-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.97) 0%, rgba(5,5,5,0.2) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
+    .cat-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: rgba(123,47,190,0.15); position: absolute; top: 15px; right: 20px; transition: color 0.3s; }
+    .cat-card:hover .cat-num { color: rgba(123,47,190,0.4); }
+    .cat-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: white; margin-bottom: 8px; letter-spacing: 1px; }
+    .cat-desc { color: #777; font-size: 12px; line-height: 1.7; margin-bottom: 18px; max-width: 280px; }
+    .cat-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--purple-light); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid rgba(123,47,190,0.3); padding-bottom: 2px; transition: all 0.3s; }
+    .cat-card:hover .cat-btn { color: white; border-color: white; }
+
+    /* MODAL */
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 9999; flex-direction: column; }
+    .modal.active { display: flex; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid rgba(123,47,190,0.2); background: rgba(5,5,5,0.95); flex-shrink: 0; }
+    .modal-title-wrap { display: flex; flex-direction: column; }
+    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--purple-light); }
+    .modal-subtitle { color: #333; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+    .modal-close { color: white; font-size: 28px; cursor: pointer; background: none; border: none; }
+    .modal-body { flex: 1; overflow-y: auto; padding: 30px; }
+    .modal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+    .modal-item { aspect-ratio: 1; overflow: hidden; cursor: pointer; border: 1px solid rgba(123,47,190,0.05); transition: border-color 0.3s; }
+    .modal-item:hover { border-color: rgba(123,47,190,0.4); }
+    .modal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .modal-item:hover img { transform: scale(1.05); }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 99999; align-items: center; justify-content: center; padding: 15px; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
+    .lb-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 32px; cursor: pointer; background: none; border: none; }
+    .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); color: var(--purple-light); font-size: 36px; cursor: pointer; background: rgba(123,47,190,0.1); border: 1px solid rgba(123,47,190,0.2); padding: 12px 18px; transition: all 0.3s; }
+    .lb-prev { left: 10px; }
+    .lb-next { right: 10px; }
+    .lb-prev:hover, .lb-next:hover { background: rgba(123,47,190,0.3); }
+    .lb-counter { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); color: var(--purple-light); font-size: 12px; letter-spacing: 2px; }
 
     /* ABOUT */
     .about { padding: 100px 5%; background: var(--card); }
     .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 70px; align-items: center; }
     .about-tag { color: var(--purple-light); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
-    .about-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 3.5vw, 46px); font-weight: 300; line-height: 1.2; margin-bottom: 20px;
-    }
+    .about-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 46px); font-weight: 300; line-height: 1.2; margin-bottom: 20px; }
     .about-title span { color: var(--purple-light); font-style: italic; }
     .about-text { color: #555; font-size: 13px; line-height: 2; margin-bottom: 15px; }
     .features { display: flex; flex-direction: column; gap: 25px; }
     .feat-item { display: flex; gap: 18px; align-items: flex-start; }
-    .feat-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      border: 1px solid rgba(123,47,190,0.3);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--purple-light); font-size: 16px;
-    }
+    .feat-icon { width: 42px; height: 42px; flex-shrink: 0; border: 1px solid rgba(123,47,190,0.3); display: flex; align-items: center; justify-content: center; color: var(--purple-light); font-size: 16px; }
     .feat-item h4 { color: white; font-size: 13px; font-weight: 600; margin-bottom: 4px; letter-spacing: 1px; }
     .feat-item p { color: #444; font-size: 12px; line-height: 1.7; }
 
@@ -213,104 +152,30 @@
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: start; }
     .c-info { display: flex; flex-direction: column; gap: 25px; margin-top: 30px; }
     .c-item { display: flex; gap: 18px; align-items: flex-start; }
-    .c-icon {
-      width: 45px; height: 45px; flex-shrink: 0;
-      border: 1px solid rgba(123,47,190,0.2);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--purple-light); font-size: 16px;
-    }
+    .c-icon { width: 45px; height: 45px; flex-shrink: 0; border: 1px solid rgba(123,47,190,0.2); display: flex; align-items: center; justify-content: center; color: var(--purple-light); font-size: 16px; }
     .c-item h4 { color: #333; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
     .c-item p { color: white; font-size: 14px; font-weight: 500; }
-    .contact-right {
-      background: var(--card); border: 1px solid rgba(123,47,190,0.15);
-      padding: 50px; position: relative;
-    }
-    .contact-right::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--purple), transparent);
-    }
+    .contact-right { background: var(--card); border: 1px solid rgba(123,47,190,0.15); padding: 50px; position: relative; }
+    .contact-right::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--purple), transparent); }
     .contact-right h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; margin-bottom: 15px; }
     .contact-right p { color: #444; font-size: 13px; line-height: 2; margin-bottom: 30px; }
-    .quote-box {
-      background: rgba(123,47,190,0.05); border: 1px solid rgba(123,47,190,0.1);
-      padding: 25px; margin-bottom: 25px;
-    }
-    .quote-box p {
-      font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic;
-      color: var(--purple-light); margin-bottom: 8px;
-    }
+    .quote-box { background: rgba(123,47,190,0.05); border: 1px solid rgba(123,47,190,0.1); padding: 25px; margin-bottom: 25px; }
+    .quote-box p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--purple-light); margin-bottom: 8px; }
     .quote-box span { color: #333; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
     .social-row { display: flex; gap: 12px; margin-top: 20px; }
-    .s-btn {
-      width: 45px; height: 45px; border: 1px solid rgba(123,47,190,0.2);
-      display: flex; align-items: center; justify-content: center;
-      color: #444; text-decoration: none; font-size: 16px; transition: all 0.3s;
-    }
+    .s-btn { width: 45px; height: 45px; border: 1px solid rgba(123,47,190,0.2); display: flex; align-items: center; justify-content: center; color: #444; text-decoration: none; font-size: 16px; transition: all 0.3s; }
     .s-btn:hover { border-color: var(--purple); color: var(--purple-light); }
-    .wa-btn {
-      display: inline-flex; align-items: center; gap: 12px;
-      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-      color: white; padding: 17px 40px; font-size: 11px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
-      transition: all 0.3s; width: 100%; justify-content: center; margin-top: 20px;
-    }
+    .wa-btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: white; padding: 17px 40px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; width: 100%; justify-content: center; margin-top: 20px; }
     .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px var(--purple-glow); }
 
-    /* MODAL */
-    .modal {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.97); z-index: 9999;
-      flex-direction: column;
-    }
-    .modal.active { display: flex; }
-    .modal-header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 30px; border-bottom: 1px solid rgba(123,47,190,0.2);
-      background: rgba(5,5,5,0.9); flex-shrink: 0;
-    }
-    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--purple-light); }
-    .modal-close { color: #555; font-size: 28px; cursor: pointer; background: none; border: none; color: white; }
-    .modal-body { flex: 1; overflow-y: auto; padding: 30px; }
-    .modal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
-    .modal-item {
-      aspect-ratio: 1; overflow: hidden; cursor: pointer;
-      border: 1px solid rgba(123,47,190,0.05); transition: border-color 0.3s;
-    }
-    .modal-item:hover { border-color: rgba(123,47,190,0.4); }
-    .modal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .modal-item:hover img { transform: scale(1.05); }
-
-    /* LIGHTBOX */
-    .lightbox {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.98); z-index: 99999;
-      align-items: center; justify-content: center; padding: 15px;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
-    .lb-close { position: absolute; top: 20px; right: 25px; color: white; font-size: 32px; cursor: pointer; background: none; border: none; }
-    .lb-prev, .lb-next {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      color: var(--purple-light); font-size: 36px; cursor: pointer;
-      background: rgba(123,47,190,0.1); border: 1px solid rgba(123,47,190,0.2);
-      padding: 12px 18px; transition: all 0.3s;
-    }
-    .lb-prev { left: 10px; }
-    .lb-next { right: 10px; }
-    .lb-prev:hover, .lb-next:hover { background: rgba(123,47,190,0.3); }
-    .lb-counter { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); color: var(--purple-light); font-size: 12px; letter-spacing: 2px; }
-
-    /* FOOTER */
-    footer {
-      padding: 35px 5%; border-top: 1px solid rgba(123,47,190,0.1);
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;
-    }
+    footer { padding: 35px 5%; border-top: 1px solid rgba(123,47,190,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; color: var(--purple-light); letter-spacing: 3px; text-transform: uppercase; }
     footer p { color: #222; font-size: 11px; letter-spacing: 1px; }
     footer span { color: var(--purple-light); }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .search-wrap { display: none; }
       .stat { border-right: none; border-bottom: 1px solid rgba(123,47,190,0.1); }
       .lb-prev { left: 5px; padding: 8px 12px; }
       .lb-next { right: 5px; padding: 8px 12px; }
@@ -325,6 +190,10 @@
     <div class="logo-wrap">
       <div class="logo-main">Premium Awards Emporium</div>
       <div class="logo-sub">Crafting Prestige. Defining Excellence.</div>
+    </div>
+    <div class="search-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search awards..." onkeyup="searchAwards()">
     </div>
     <ul class="nav-links">
       <li><a href="#categories">Collections</a></li>
@@ -348,8 +217,14 @@
   <div class="stats">
     <div class="stat"><span class="stat-num">500+</span><p>Awards Crafted</p></div>
     <div class="stat"><span class="stat-num">100+</span><p>Corporate Clients</p></div>
-    <div class="stat"><span class="stat-num">17+</span><p>Collections</p></div>
+    <div class="stat"><span class="stat-num">17</span><p>Collections</p></div>
     <div class="stat"><span class="stat-num">∞</span><p>Legacy Created</p></div>
+  </div>
+
+  <!-- SEARCH RESULTS -->
+  <div class="search-results" id="searchResults">
+    <h3 id="searchTitle">Search Results</h3>
+    <div class="search-grid" id="searchGrid"></div>
   </div>
 
   <section class="categories" id="categories">
@@ -365,10 +240,9 @@
         <div class="cat-overlay">
           <div class="cat-num">01</div>
           <div class="cat-name">Trophies</div>
-          <div class="cat-desc">Premium trophy collections for all occasions and ceremonies.</div>
-          <div class="cat-count">56 Pieces</div>
+          <div class="cat-desc">Timeless trophy pieces that immortalize achievement. Each trophy is crafted to stand as a lasting symbol of excellence, victory and recognition for every occasion.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('wooden-box')">
@@ -376,98 +250,89 @@
         <div class="cat-overlay">
           <div class="cat-num">02</div>
           <div class="cat-name">Wooden Boxes</div>
-          <div class="cat-desc">Elegant wooden presentation boxes crafted with precision.</div>
-          <div class="cat-count">20 Pieces</div>
+          <div class="cat-desc">Exquisitely crafted wooden presentation boxes that add a touch of natural elegance. Perfect for housing awards, gifts and keepsakes with a premium feel.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('crystal-trophy')">
-        <img src="https://i.ibb.co/fdYJhqwS/Screenshot-20260525-094815-Whats-App-Business.jpg" alt="Crystal Trophy">
+        <img src="https://i.ibb.co/TMJXH08L/Screenshot-20260525-095058-Whats-App-Business.jpg" alt="Crystal Trophy">
         <div class="cat-overlay">
           <div class="cat-num">03</div>
           <div class="cat-name">Crystal Trophies</div>
-          <div class="cat-desc">Exquisite crystal trophies that capture light and prestige.</div>
-          <div class="cat-count">19 Pieces</div>
+          <div class="cat-desc">Breathtaking crystal trophies that capture light and radiate prestige. A perfect fusion of artistry and recognition, designed for the most distinguished ceremonies.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('medals')">
-        <img src="https://i.ibb.co/mYYgJx1/Screenshot-20260525-094815-Whats-App-Business.jpg" alt="Medals">
+        <img src="https://i.ibb.co/fdYJhqwS/Screenshot-20260525-094815-Whats-App-Business.jpg" alt="Medals">
         <div class="cat-overlay">
           <div class="cat-num">04</div>
           <div class="cat-name">Medals</div>
-          <div class="cat-desc">Precision-crafted medals for sporting and academic excellence.</div>
-          <div class="cat-count">34 Pieces</div>
+          <div class="cat-desc">Precision-engineered medals that honour achievement at its highest level. From sporting glory to academic distinction, our medals carry weight, meaning and lasting pride.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
-      <div class="cat-card" onclick="openModal('crystals')">
-        <img src="https://i.ibb.co/2184XYJ6/Screenshot-20260525-093823-Whats-App-Business.jpg" alt="Crystals">
+      <div class="cat-card" onclick="openModal('crystal-awards')">
+        <img src="https://i.ibb.co/2184XYJ6/Screenshot-20260525-093823-Whats-App-Business.jpg" alt="Crystal Awards">
         <div class="cat-overlay">
           <div class="cat-num">05</div>
-          <div class="cat-name">Crystals</div>
-          <div class="cat-desc">Stunning crystal award pieces of distinction and elegance.</div>
-          <div class="cat-count">34 Pieces</div>
+          <div class="cat-name">Crystal Awards</div>
+          <div class="cat-desc">Where light meets legacy. Our crystal awards are sculpted from premium optical crystal, delivering a brilliance that commands attention and communicates the highest honour.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
-      <div class="cat-card" onclick="openModal('wood')">
-        <img src="https://i.ibb.co/G4t03T86/Screenshot-20260525-093203-Whats-App-Business.jpg" alt="Wood">
+      <div class="cat-card" onclick="openModal('wood-awards')">
+        <img src="https://i.ibb.co/G4t03T86/Screenshot-20260525-093203-Whats-App-Business.jpg" alt="Wood Awards">
         <div class="cat-overlay">
           <div class="cat-num">06</div>
-          <div class="cat-name">Wood</div>
-          <div class="cat-desc">Premium wooden award pieces with timeless natural beauty.</div>
-          <div class="cat-count">20 Pieces</div>
+          <div class="cat-name">Wood Awards</div>
+          <div class="cat-desc">Warmth, tradition and timeless beauty. Our wood awards are crafted from premium hardwood, combining natural elegance with precision engraving for a distinction that endures.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('cup-trophy')">
         <img src="https://i.ibb.co/sJbdGQQd/Screenshot-20260525-095610-Whats-App-Business.jpg" alt="Cup Trophy">
         <div class="cat-overlay">
           <div class="cat-num">07</div>
-          <div class="cat-name">Cup Trophies</div>
-          <div class="cat-desc">Classic cup trophy designs for champions and winners.</div>
-          <div class="cat-count">8 Pieces</div>
+          <div class="cat-name">Cup Trophy Awards</div>
+          <div class="cat-desc">The ultimate symbol of victory. Our cup trophies embody championship spirit with bold, commanding designs that proudly display the name of every winner.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
-      <div class="cat-card" onclick="openModal('3d')">
-        <img src="https://i.ibb.co/TxCZCPF3/Screenshot-20260525-092911-Whats-App-Business.jpg" alt="3D">
+      <div class="cat-card" onclick="openModal('3d-awards')">
+        <img src="https://i.ibb.co/twms1HdR/Screenshot-20260525-094326-Whats-App-Business.jpg" alt="3D Awards">
         <div class="cat-overlay">
           <div class="cat-num">08</div>
           <div class="cat-name">3D Awards</div>
-          <div class="cat-desc">Modern 3D award pieces with depth and dimension.</div>
-          <div class="cat-count">9 Pieces</div>
+          <div class="cat-desc">Innovation meets recognition. Our 3D awards bring dimension and depth to achievement, creating striking pieces that stand out and leave a powerful, lasting impression.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
-      <div class="cat-card" onclick="openModal('acrylic')">
-        <img src="https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg" alt="Acrylic">
+      <div class="cat-card" onclick="openModal('acrylic-awards')">
+        <img src="https://i.ibb.co/TxCZCPF3/Screenshot-20260525-092911-Whats-App-Business.jpg" alt="Acrylic Awards">
         <div class="cat-overlay">
           <div class="cat-num">09</div>
-          <div class="cat-name">Acrylics</div>
-          <div class="cat-desc">Contemporary acrylic award designs for modern recognition.</div>
-          <div class="cat-count">10 Pieces</div>
+          <div class="cat-name">Acrylic Awards</div>
+          <div class="cat-desc">Sleek, modern and bold. Our acrylic awards deliver contemporary elegance with crystal-clear clarity, making them ideal for corporate recognitions and modern ceremonies.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('throw-pillows')">
-        <img src="https://i.ibb.co/kvthvRJ/Screenshot-20260525-094543-Whats-App-Business.jpg" alt="Throw Pillows">
+        <img src="https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg" alt="Throw Pillows">
         <div class="cat-overlay">
           <div class="cat-num">10</div>
           <div class="cat-name">Throw Pillows</div>
-          <div class="cat-desc">Premium customised throw pillows for gifting and branding.</div>
-          <div class="cat-count">4 Pieces</div>
+          <div class="cat-desc">Premium customised throw pillows that blend comfort with brand identity. Perfect for corporate gifting, branded spaces and event giveaways that leave a lasting impression.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('diaries')">
@@ -475,10 +340,9 @@
         <div class="cat-overlay">
           <div class="cat-num">11</div>
           <div class="cat-name">Diaries</div>
-          <div class="cat-desc">Premium branded diaries and notebooks for corporate gifting.</div>
-          <div class="cat-count">14 Pieces</div>
+          <div class="cat-desc">Elegantly branded diaries and premium notebooks crafted for the discerning professional. A refined gift that combines utility with a lasting expression of prestige.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('tshirts')">
@@ -486,10 +350,9 @@
         <div class="cat-overlay">
           <div class="cat-num">12</div>
           <div class="cat-name">T-Shirts</div>
-          <div class="cat-desc">Custom branded T-shirts for events and corporate identity.</div>
-          <div class="cat-count">2 Pieces</div>
+          <div class="cat-desc">Custom branded T-shirts designed for events, corporate identity and team uniforms. Quality fabric meets premium printing for a look that represents your brand with pride.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('key-holders')">
@@ -497,10 +360,9 @@
         <div class="cat-overlay">
           <div class="cat-num">13</div>
           <div class="cat-name">Key Holders</div>
-          <div class="cat-desc">Premium branded key holders for corporate gifting.</div>
-          <div class="cat-count">2 Pieces</div>
+          <div class="cat-desc">Premium branded key holders that make an everyday item feel exclusive. A sophisticated corporate gift that keeps your brand visible and valued every single day.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('mugs')">
@@ -508,43 +370,39 @@
         <div class="cat-overlay">
           <div class="cat-num">14</div>
           <div class="cat-name">Mugs</div>
-          <div class="cat-desc">Custom branded mugs for corporate gifting and events.</div>
-          <div class="cat-count">10 Pieces</div>
+          <div class="cat-desc">Custom branded mugs that turn every morning into a brand moment. High-quality ceramic mugs with premium full-colour printing, perfect for gifting and corporate identity.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('neon')">
-        <img src="https://i.ibb.co/84s2VntF/Screenshot-20260525-095452-Whats-App-Business.jpg" alt="Neon Light">
+        <img src="https://i.ibb.co/84s2VntF/Screenshot-20260525-095452-Whats-App-Business.jpg" alt="Neon Lights">
         <div class="cat-overlay">
           <div class="cat-num">15</div>
           <div class="cat-name">Neon Lights</div>
-          <div class="cat-desc">Custom neon light displays for events and branding.</div>
-          <div class="cat-count">2 Pieces</div>
+          <div class="cat-desc">Vibrant custom neon light displays that illuminate your brand, event or space with personality. Crafted to captivate, our neon pieces transform any environment into an experience.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('custom-crystal')">
-        <img src="https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg" alt="Customised Crystal">
+        <img src="https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg" alt="Customised Crystal Awards">
         <div class="cat-overlay">
           <div class="cat-num">16</div>
           <div class="cat-name">Customised Crystal Awards</div>
-          <div class="cat-desc">Bespoke crystal award pieces crafted to your specification.</div>
-          <div class="cat-count">1 Piece</div>
+          <div class="cat-desc">Bespoke crystal award pieces designed exclusively to your specification. Every curve, inscription and detail is crafted with precision to create a one-of-a-kind symbol of honour.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
       <div class="cat-card" onclick="openModal('custom-trophy')">
-        <img src="https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg" alt="Customised Trophies">
+        <img src="https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg" alt="Customised Trophy Award">
         <div class="cat-overlay">
           <div class="cat-num">17</div>
-          <div class="cat-name">Customised Trophies</div>
-          <div class="cat-desc">Fully custom trophy designs built to your exact vision.</div>
-          <div class="cat-count">1 Piece</div>
+          <div class="cat-name">Customised Trophy Award</div>
+          <div class="cat-desc">Fully bespoke trophy designs built from the ground up to match your exact vision. No templates, no limits — just pure craftsmanship delivering a trophy as unique as the achievement it represents.</div>
+          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="cat-view-btn">View Collection</div>
       </div>
 
     </div>
@@ -556,18 +414,19 @@
       <div>
         <div class="about-tag">About Premium Awards Emporium</div>
         <h2 class="about-title">More Than An Award —<br>A <span>Symbol of Legacy</span></h2>
-        <p class="about-text">Awards Emporium is a premium trophy and engraving house dedicated to celebrating excellence in its most refined form. We specialize in the importation, design, and bespoke production of luxury award plaques, crystal trophies, medals, and branded recognition pieces for corporate organizations, institutions, events, and high-profile ceremonies.</p>
-        <p class="about-text">Every piece we create is more than an award — it is a symbol of honour, achievement, and legacy. With precision craftsmanship and attention to detail, we transform recognition into timeless works of art.</p>
+        <p class="about-text">Premium Awards Emporium is a distinguished trophy and engraving house dedicated to celebrating excellence in its most refined form. We specialize in the importation, design, and bespoke production of luxury award plaques, crystal trophies, medals, and branded recognition pieces for corporate organizations, institutions, events, and high-profile ceremonies.</p>
+        <p class="about-text">Every piece we create is more than an award — it is a symbol of honour, achievement, and legacy. With precision craftsmanship and uncompromising attention to detail, we transform recognition into timeless works of art.</p>
+        <p class="about-text">From elegant crystal awards to custom-designed plaques and premium medals, we deliver distinction that speaks before words.</p>
         <a href="#contact" class="btn-purple" style="margin-top:15px;display:inline-block">Commission Your Award</a>
       </div>
       <div class="features">
         <div class="feat-item">
           <div class="feat-icon"><i class="fas fa-gem"></i></div>
-          <div><h4>Premium Materials</h4><p>Crystal, glass, acrylic, metal and premium wood — only the finest materials for distinction.</p></div>
+          <div><h4>Premium Materials</h4><p>Crystal, glass, acrylic, metal and premium wood — only the finest materials create true distinction.</p></div>
         </div>
         <div class="feat-item">
           <div class="feat-icon"><i class="fas fa-paint-brush"></i></div>
-          <div><h4>Bespoke Design</h4><p>Every award custom-designed to reflect your organization's unique vision and values.</p></div>
+          <div><h4>Bespoke Design</h4><p>Every award custom-designed to reflect your organization's unique vision, values and identity.</p></div>
         </div>
         <div class="feat-item">
           <div class="feat-icon"><i class="fas fa-building"></i></div>
@@ -575,7 +434,7 @@
         </div>
         <div class="feat-item">
           <div class="feat-icon"><i class="fas fa-certificate"></i></div>
-          <div><h4>Precision Engraving</h4><p>State-of-the-art engraving ensures every name, logo and achievement is captured perfectly.</p></div>
+          <div><h4>Precision Engraving</h4><p>State-of-the-art engraving ensures every name, logo and achievement is captured with perfection.</p></div>
         </div>
       </div>
     </div>
@@ -592,7 +451,7 @@
       <div>
         <div class="about-tag">Contact Information</div>
         <h2 class="about-title" style="font-size:clamp(24px,3vw,36px)">Let's Create<br><span>Something Timeless</span></h2>
-        <p class="about-text">Whether you need a single bespoke piece or hundreds of awards for a corporate event — we are ready to serve with excellence.</p>
+        <p class="about-text">Whether you need a single bespoke piece or hundreds of awards for a corporate event — we are ready to serve with excellence and precision.</p>
         <div class="c-info">
           <div class="c-item">
             <div class="c-icon"><i class="fas fa-phone"></i></div>
@@ -615,10 +474,10 @@
       </div>
       <div class="contact-right">
         <h3>Request a Quote</h3>
-        <p>For custom orders, corporate branding solutions and award commissions — reach out to us directly on WhatsApp for the fastest response.</p>
+        <p>For custom orders, corporate branding solutions and award commissions — reach out directly on WhatsApp for the fastest response.</p>
         <div class="quote-box">
           <p>"Crafting Prestige. Defining Excellence."</p>
-          <span>Premium Awards Emporium</span>
+          <span>Premium Awards Emporium — Lagos, Nigeria</span>
         </div>
         <a href="https://wa.me/2347067423913" class="wa-btn" target="_blank">
           <i class="fab fa-whatsapp"></i> Request a Quote on WhatsApp
@@ -629,14 +488,17 @@
 
   <footer>
     <div class="footer-logo">Premium Awards Emporium</div>
-    <p>© 2024 <span>Premium Awards Emporium</span> — Lagos, Nigeria</p>
+    <p>© 2025 <span>Premium Awards Emporium</span> — Lagos, Nigeria</p>
     <p>Website by <span>Owosam Branding</span> 🔥</p>
   </footer>
 
-  <!-- CATEGORY MODAL -->
+  <!-- MODAL -->
   <div class="modal" id="modal">
     <div class="modal-header">
-      <div class="modal-title" id="modalTitle">Collection</div>
+      <div class="modal-title-wrap">
+        <div class="modal-title" id="modalTitle">Collection</div>
+        <div class="modal-subtitle">Premium Awards Emporium</div>
+      </div>
       <button class="modal-close" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body">
@@ -666,7 +528,6 @@
       pc.appendChild(p);
     }
 
-    // ALL CATEGORIES WITH IMAGES
     const categories = {
       'trophies': {
         title: 'Trophies',
@@ -739,6 +600,10 @@
           "https://i.ibb.co/gZF04dDW/Screenshot-20260525-094516-Whats-App-Business.jpg",
           "https://i.ibb.co/209MXJNT/Screenshot-20260525-094453-Whats-App-Business.jpg",
           "https://i.ibb.co/6J8Xr941/Screenshot-20260525-094504-Whats-App-Business.jpg",
+          "https://i.ibb.co/kvthvRJ/Screenshot-20260525-094543-Whats-App-Business.jpg",
+          "https://i.ibb.co/cSh7ZB7b/Screenshot-20260525-094548-Whats-App-Business.jpg",
+          "https://i.ibb.co/PzZ8nrcz/Screenshot-20260525-094528-Whats-App-Business.jpg",
+          "https://i.ibb.co/20BvvszT/Screenshot-20260525-094535-Whats-App-Business.jpg",
           "https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg",
           "https://i.ibb.co/TMCggctb/Screenshot-20260525-095303-Whats-App-Business.jpg",
           "https://i.ibb.co/RThx2MC3/Screenshot-20260525-095315-Whats-App-Business.jpg",
@@ -748,11 +613,7 @@
           "https://i.ibb.co/0jzGJJHY/Screenshot-20260525-095325-Whats-App-Business.jpg",
           "https://i.ibb.co/vxqqWBtX/Screenshot-20260525-095322-Whats-App-Business.jpg",
           "https://i.ibb.co/JWsLWrrR/Screenshot-20260525-095349-Whats-App-Business.jpg",
-          "https://i.ibb.co/bY0Bwy5/Screenshot-20260525-095401-Whats-App-Business.jpg",
-          "https://i.ibb.co/Ng8rzY6d/Screenshot-20260525-095650-Whats-App-Business.jpg",
-          "https://i.ibb.co/tPMPZzMk/Screenshot-20260525-095653-Whats-App-Business.jpg",
-          "https://i.ibb.co/HDDcxm8X/Screenshot-20260525-095700-Whats-App-Business.jpg",
-          "https://i.ibb.co/R4Ctt70F/Screenshot-20260525-095657-Whats-App-Business.jpg"
+          "https://i.ibb.co/bY0Bwy5/Screenshot-20260525-095401-Whats-App-Business.jpg"
         ]
       },
       'crystal-trophy': {
@@ -790,8 +651,8 @@
           "https://i.ibb.co/5WCb74NV/Screenshot-20260525-094824-Whats-App-Business.jpg"
         ]
       },
-      'crystals': {
-        title: 'Crystals',
+      'crystal-awards': {
+        title: 'Crystal Awards',
         images: [
           "https://i.ibb.co/0Rn7qGR4/Screenshot-20260525-094108-Whats-App-Business.jpg",
           "https://i.ibb.co/WWR1FNN2/Screenshot-20260525-094104-Whats-App-Business.jpg",
@@ -829,8 +690,8 @@
           "https://i.ibb.co/v4VzLW4C/Screenshot-20260525-092934-Whats-App-Business.jpg"
         ]
       },
-      'wood': {
-        title: 'Wood',
+      'wood-awards': {
+        title: 'Wood Awards',
         images: [
           "https://i.ibb.co/HMrb1ng/Screenshot-20260525-093322-Whats-App-Business.jpg",
           "https://i.ibb.co/mVPcKNYZ/Screenshot-20260525-093330-Whats-App-Business.jpg",
@@ -855,7 +716,7 @@
         ]
       },
       'cup-trophy': {
-        title: 'Cup Trophies',
+        title: 'Cup Trophy Awards',
         images: [
           "https://i.ibb.co/sJbdGQQd/Screenshot-20260525-095610-Whats-App-Business.jpg",
           "https://i.ibb.co/39F58PfW/Screenshot-20260525-095613-Whats-App-Business.jpg",
@@ -867,7 +728,7 @@
           "https://i.ibb.co/SXXCCkPD/Screenshot-20260525-095527-Whats-App-Business.jpg"
         ]
       },
-      '3d': {
+      '3d-awards': {
         title: '3D Awards',
         images: [
           "https://i.ibb.co/twms1HdR/Screenshot-20260525-094326-Whats-App-Business.jpg",
@@ -881,8 +742,8 @@
           "https://i.ibb.co/ny6p96g/Screenshot-20260525-094424-Whats-App-Business.jpg"
         ]
       },
-      'acrylic': {
-        title: 'Acrylics',
+      'acrylic-awards': {
+        title: 'Acrylic Awards',
         images: [
           "https://i.ibb.co/dsz5FqvT/Screenshot-20260525-092911-Whats-App-Business.jpg",
           "https://i.ibb.co/CKcWhTcv/Screenshot-20260525-092854-Whats-App-Business.jpg",
@@ -899,10 +760,13 @@
       'throw-pillows': {
         title: 'Throw Pillows',
         images: [
-          "https://i.ibb.co/kvthvRJ/Screenshot-20260525-094543-Whats-App-Business.jpg",
-          "https://i.ibb.co/cSh7ZB7b/Screenshot-20260525-094548-Whats-App-Business.jpg",
-          "https://i.ibb.co/PzZ8nrcz/Screenshot-20260525-094528-Whats-App-Business.jpg",
-          "https://i.ibb.co/20BvvszT/Screenshot-20260525-094535-Whats-App-Business.jpg"
+          "https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg",
+          "https://i.ibb.co/TM7Wjrjd/Screenshot-20260525-094704-Whats-App-Business.jpg",
+          "https://i.ibb.co/VYvSwssb/Screenshot-20260525-094701-Whats-App-Business.jpg",
+          "https://i.ibb.co/JWBpyvhs/Screenshot-20260525-094649-Whats-App-Business.jpg",
+          "https://i.ibb.co/8LFTbZq3/Screenshot-20260525-094652-Whats-App-Business.jpg",
+          "https://i.ibb.co/qLDTvjTY/Screenshot-20260525-094728-Whats-App-Business.jpg",
+          "https://i.ibb.co/4gnbqFYC/Screenshot-20260525-094714-Whats-App-Business.jpg"
         ]
       },
       'diaries': {
@@ -957,21 +821,20 @@
           "https://i.ibb.co/qFJrGcj7/Screenshot-20260525-095432-Whats-App-Business.jpg",
           "https://i.ibb.co/9kTs48wH/Screenshot-20260525-095428-Whats-App-Business.jpg",
           "https://i.ibb.co/hxdQ56TP/Screenshot-20260525-095423-Whats-App-Business.jpg",
-          "https://i.ibb.co/JRXRxZZc/Screenshot-20260525-095417-Whats-App-Business.jpg",
-          "https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg",
-          "https://i.ibb.co/srsDShh/Screenshot-20260525-094741-Whats-App-Business.jpg"
+          "https://i.ibb.co/JRXRxZZc/Screenshot-20260525-095417-Whats-App-Business.jpg"
         ]
       },
       'custom-crystal': {
         title: 'Customised Crystal Awards',
         images: [
-          "https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg"
+          "https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg",
+          "https://i.ibb.co/srsDShh/Screenshot-20260525-094741-Whats-App-Business.jpg"
         ]
       },
       'custom-trophy': {
-        title: 'Customised Trophies',
+        title: 'Customised Trophy Award',
         images: [
-          "https://i.ibb.co/2184XYJ6/Screenshot-20260525-093823-Whats-App-Business.jpg"
+          "https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg"
         ]
       }
     };
@@ -984,7 +847,7 @@
       document.getElementById('modalTitle').textContent = data.title;
       const grid = document.getElementById('modalGrid');
       grid.innerHTML = data.images.map((src, i) =>
-        `<div class="modal-item" onclick="openLB(${i}, '${cat}')">
+        `<div class="modal-item" onclick="openLB(${i},'${cat}')">
           <img src="${src}" alt="${data.title} ${i+1}" loading="lazy">
         </div>`
       ).join('');
@@ -1000,7 +863,7 @@
 
     function openLB(i, cat) {
       lbIndex = i;
-      currentCatImages = categories[cat].images;
+      if(cat) currentCatImages = categories[cat].images;
       document.getElementById('lbImg').src = currentCatImages[i];
       document.getElementById('lbCounter').textContent = (i+1) + ' / ' + currentCatImages.length;
       document.getElementById('lightbox').classList.add('active');
@@ -1017,6 +880,53 @@
     }
 
     document.getElementById('lightbox').addEventListener('click', e => { if(e.target===e.currentTarget) closeLB(); });
+
+    // SEARCH
+    function searchAwards() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const resultsDiv = document.getElementById('searchResults');
+      const grid = document.getElementById('searchGrid');
+      const title = document.getElementById('searchTitle');
+
+      if(query.length < 2) {
+        resultsDiv.classList.remove('active');
+        return;
+      }
+
+      const results = [];
+      Object.keys(categories).forEach(key => {
+        const cat = categories[key];
+        if(cat.title.toLowerCase().includes(query)) {
+          cat.images.forEach((img, i) => {
+            results.push({ src: img, label: cat.title, catKey: key, idx: i });
+          });
+        }
+      });
+
+      if(results.length > 0) {
+        title.textContent = `Results for "${query}" — ${results.length} items found`;
+        grid.innerHTML = results.map((r, i) =>
+          `<div class="search-item" onclick="openSearchLB(${i}, ${JSON.stringify(results.map(x=>x.src))})">
+            <img src="${r.src}" alt="${r.label}" loading="lazy">
+            <div class="search-item-label">${r.label}</div>
+          </div>`
+        ).join('');
+        resultsDiv.classList.add('active');
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        title.textContent = `No results found for "${query}"`;
+        grid.innerHTML = '<p style="color:#444;font-size:13px;padding:20px 0">No awards found. Try searching: trophy, crystal, medal, wood, acrylic...</p>';
+        resultsDiv.classList.add('active');
+      }
+    }
+
+    function openSearchLB(i, imgs) {
+      currentCatImages = imgs;
+      lbIndex = i;
+      document.getElementById('lbImg').src = imgs[i];
+      document.getElementById('lbCounter').textContent = (i+1) + ' / ' + imgs.length;
+      document.getElementById('lightbox').classList.add('active');
+    }
   </script>
 
 </body>
