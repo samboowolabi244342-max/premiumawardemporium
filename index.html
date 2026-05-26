@@ -25,39 +25,43 @@
     @keyframes float-up { 0%{transform:translateY(100vh);opacity:0} 10%{opacity:0.5} 90%{opacity:0.1} 100%{transform:translateY(-100px);opacity:0} }
 
     nav {
-      padding: 18px 5%; display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 5%; display: flex; justify-content: space-between; align-items: center;
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: rgba(5,5,5,0.97); backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(123,47,190,0.2);
     }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-img { width: 48px; height: 48px; object-fit: contain; border-radius: 50%; border: 1px solid rgba(123,47,190,0.3); }
     .logo-wrap { display: flex; flex-direction: column; }
-    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--purple-light); letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 0 20px var(--purple-glow); }
-    .logo-sub { font-size: 8px; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 2px; }
+    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--purple-light); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 20px var(--purple-glow); }
+    .logo-sub { font-size: 7px; color: #444; letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
     .nav-links { list-style: none; display: flex; gap: 25px; align-items: center; }
     .nav-links a { color: #555; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: var(--purple-light); }
     .nav-cta { color: var(--purple-light) !important; border: 1px solid var(--purple) !important; padding: 8px 20px; transition: all 0.3s !important; }
     .nav-cta:hover { background: var(--purple) !important; color: white !important; }
 
-    /* SEARCH BAR */
     .search-wrap {
       display: flex; align-items: center; gap: 10px;
       background: rgba(123,47,190,0.08); border: 1px solid rgba(123,47,190,0.2);
       padding: 8px 16px; border-radius: 3px;
     }
-    .search-wrap input {
-      background: none; border: none; outline: none;
-      color: white; font-size: 12px; font-family: 'Montserrat', sans-serif;
-      width: 180px; letter-spacing: 1px;
-    }
+    .search-wrap input { background: none; border: none; outline: none; color: white; font-size: 12px; font-family: 'Montserrat', sans-serif; width: 180px; letter-spacing: 1px; }
     .search-wrap input::placeholder { color: #333; }
     .search-wrap i { color: var(--purple-light); font-size: 13px; }
 
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center; text-align: center;
-      padding: 120px 5% 80px; position: relative; overflow: hidden;
+    /* MOBILE SEARCH */
+    .mobile-search {
+      display: none;
+      position: fixed; top: 76px; left: 0; right: 0; z-index: 999;
+      background: rgba(5,5,5,0.97);
+      border-bottom: 1px solid rgba(123,47,190,0.2);
+      padding: 12px 5%;
     }
+    .mobile-search .search-wrap { width: 100%; }
+    .mobile-search .search-wrap input { width: 100%; }
+
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 5% 80px; position: relative; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(123,47,190,0.08) 0%, transparent 65%); }
     .hero-line { width: 1px; height: 70px; background: linear-gradient(to bottom, transparent, var(--purple-light), transparent); margin: 0 auto 35px; }
     .hero-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; color: var(--purple-light); margin-bottom: 20px; position: relative; z-index: 1; }
@@ -76,7 +80,6 @@
     .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--purple-light); text-shadow: 0 0 20px var(--purple-glow); display: block; margin-bottom: 8px; }
     .stat p { color: #333; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
 
-    /* SEARCH RESULTS */
     .search-results { padding: 60px 5% 0; display: none; }
     .search-results.active { display: block; }
     .search-results h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--purple-light); margin-bottom: 25px; }
@@ -87,7 +90,6 @@
     .search-item:hover img { transform: scale(1.05); }
     .search-item-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(5,5,5,0.9); padding: 6px 10px; font-size: 10px; color: var(--purple-light); letter-spacing: 1px; text-transform: uppercase; }
 
-    /* CATEGORIES */
     .categories { padding: 100px 5%; }
     .sec-header { text-align: center; margin-bottom: 70px; }
     .sec-tag { color: var(--purple-light); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
@@ -108,7 +110,6 @@
     .cat-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--purple-light); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid rgba(123,47,190,0.3); padding-bottom: 2px; transition: all 0.3s; }
     .cat-card:hover .cat-btn { color: white; border-color: white; }
 
-    /* MODAL */
     .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 9999; flex-direction: column; }
     .modal.active { display: flex; }
     .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid rgba(123,47,190,0.2); background: rgba(5,5,5,0.95); flex-shrink: 0; }
@@ -123,7 +124,6 @@
     .modal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
     .modal-item:hover img { transform: scale(1.05); }
 
-    /* LIGHTBOX */
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 99999; align-items: center; justify-content: center; padding: 15px; }
     .lightbox.active { display: flex; }
     .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
@@ -134,7 +134,6 @@
     .lb-prev:hover, .lb-next:hover { background: rgba(123,47,190,0.3); }
     .lb-counter { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); color: var(--purple-light); font-size: 12px; letter-spacing: 2px; }
 
-    /* ABOUT */
     .about { padding: 100px 5%; background: var(--card); }
     .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 70px; align-items: center; }
     .about-tag { color: var(--purple-light); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
@@ -147,7 +146,6 @@
     .feat-item h4 { color: white; font-size: 13px; font-weight: 600; margin-bottom: 4px; letter-spacing: 1px; }
     .feat-item p { color: #444; font-size: 12px; line-height: 1.7; }
 
-    /* CONTACT */
     .contact { padding: 100px 5%; }
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: start; }
     .c-info { display: flex; flex-direction: column; gap: 25px; margin-top: 30px; }
@@ -176,9 +174,13 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .search-wrap { display: none; }
+      .mobile-search { display: block; }
+      .hero { padding-top: 150px; }
       .stat { border-right: none; border-bottom: 1px solid rgba(123,47,190,0.1); }
       .lb-prev { left: 5px; padding: 8px 12px; }
       .lb-next { right: 5px; padding: 8px 12px; }
+      .logo-main { font-size: 13px; letter-spacing: 1px; }
+      .logo-img { width: 38px; height: 38px; }
     }
   </style>
 </head>
@@ -187,9 +189,12 @@
   <div class="particles" id="particles"></div>
 
   <nav>
-    <div class="logo-wrap">
-      <div class="logo-main">Premium Awards Emporium</div>
-      <div class="logo-sub">Crafting Prestige. Defining Excellence.</div>
+    <div class="logo-area">
+      <img src="https://i.ibb.co/21Rvj8mZ/IMG-20260526-WA0007.jpg" class="logo-img" alt="Premium Awards Emporium Logo">
+      <div class="logo-wrap">
+        <div class="logo-main">Premium Awards Emporium</div>
+        <div class="logo-sub">Crafting Prestige. Defining Excellence.</div>
+      </div>
     </div>
     <div class="search-wrap">
       <i class="fas fa-search"></i>
@@ -201,6 +206,14 @@
       <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
   </nav>
+
+  <!-- MOBILE SEARCH BAR -->
+  <div class="mobile-search">
+    <div class="search-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInputMobile" placeholder="Search awards..." onkeyup="searchAwardsMobile()">
+    </div>
+  </div>
 
   <section class="hero">
     <div class="hero-bg"></div>
@@ -221,7 +234,6 @@
     <div class="stat"><span class="stat-num">∞</span><p>Legacy Created</p></div>
   </div>
 
-  <!-- SEARCH RESULTS -->
   <div class="search-results" id="searchResults">
     <h3 id="searchTitle">Search Results</h3>
     <div class="search-grid" id="searchGrid"></div>
@@ -260,7 +272,7 @@
         <div class="cat-overlay">
           <div class="cat-num">03</div>
           <div class="cat-name">Crystal Trophies</div>
-          <div class="cat-desc">Breathtaking crystal trophies that capture light and radiate prestige. A perfect fusion of artistry and recognition, designed for the most distinguished ceremonies.</div>
+          <div class="cat-desc">Breathtaking crystal trophies that capture light and radiate prestige. A perfect fusion of artistry and recognition for the most distinguished ceremonies.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -270,7 +282,7 @@
         <div class="cat-overlay">
           <div class="cat-num">04</div>
           <div class="cat-name">Medals</div>
-          <div class="cat-desc">Precision-engineered medals that honour achievement at its highest level. From sporting glory to academic distinction, our medals carry weight, meaning and lasting pride.</div>
+          <div class="cat-desc">Precision-engineered medals that honour achievement at its highest level. From sporting glory to academic distinction, our medals carry weight and lasting pride.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -280,7 +292,7 @@
         <div class="cat-overlay">
           <div class="cat-num">05</div>
           <div class="cat-name">Crystal Awards</div>
-          <div class="cat-desc">Where light meets legacy. Our crystal awards are sculpted from premium optical crystal, delivering a brilliance that commands attention and communicates the highest honour.</div>
+          <div class="cat-desc">Where light meets legacy. Our crystal awards are sculpted from premium optical crystal, delivering brilliance that commands attention and communicates the highest honour.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -290,7 +302,7 @@
         <div class="cat-overlay">
           <div class="cat-num">06</div>
           <div class="cat-name">Wood Awards</div>
-          <div class="cat-desc">Warmth, tradition and timeless beauty. Our wood awards are crafted from premium hardwood, combining natural elegance with precision engraving for a distinction that endures.</div>
+          <div class="cat-desc">Warmth, tradition and timeless beauty. Our wood awards combine natural elegance with precision engraving for a distinction that endures through generations.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -310,7 +322,7 @@
         <div class="cat-overlay">
           <div class="cat-num">08</div>
           <div class="cat-name">3D Awards</div>
-          <div class="cat-desc">Innovation meets recognition. Our 3D awards bring dimension and depth to achievement, creating striking pieces that stand out and leave a powerful, lasting impression.</div>
+          <div class="cat-desc">Innovation meets recognition. Our 3D awards bring dimension and depth to achievement, creating striking pieces that stand out and leave a powerful lasting impression.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -320,7 +332,7 @@
         <div class="cat-overlay">
           <div class="cat-num">09</div>
           <div class="cat-name">Acrylic Awards</div>
-          <div class="cat-desc">Sleek, modern and bold. Our acrylic awards deliver contemporary elegance with crystal-clear clarity, making them ideal for corporate recognitions and modern ceremonies.</div>
+          <div class="cat-desc">Sleek, modern and bold. Our acrylic awards deliver contemporary elegance with crystal-clear clarity, ideal for corporate recognitions and modern ceremonies.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -330,7 +342,7 @@
         <div class="cat-overlay">
           <div class="cat-num">10</div>
           <div class="cat-name">Throw Pillows</div>
-          <div class="cat-desc">Premium customised throw pillows that blend comfort with brand identity. Perfect for corporate gifting, branded spaces and event giveaways that leave a lasting impression.</div>
+          <div class="cat-desc">Premium customised throw pillows that blend comfort with brand identity. Perfect for corporate gifting, branded spaces and event giveaways.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -340,7 +352,7 @@
         <div class="cat-overlay">
           <div class="cat-num">11</div>
           <div class="cat-name">Diaries</div>
-          <div class="cat-desc">Elegantly branded diaries and premium notebooks crafted for the discerning professional. A refined gift that combines utility with a lasting expression of prestige.</div>
+          <div class="cat-desc">Elegantly branded diaries and premium notebooks for the discerning professional. A refined gift combining utility with a lasting expression of prestige.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -350,7 +362,7 @@
         <div class="cat-overlay">
           <div class="cat-num">12</div>
           <div class="cat-name">T-Shirts</div>
-          <div class="cat-desc">Custom branded T-shirts designed for events, corporate identity and team uniforms. Quality fabric meets premium printing for a look that represents your brand with pride.</div>
+          <div class="cat-desc">Custom branded T-shirts for events, corporate identity and team uniforms. Quality fabric meets premium printing for a look that represents your brand with pride.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -360,7 +372,7 @@
         <div class="cat-overlay">
           <div class="cat-num">13</div>
           <div class="cat-name">Key Holders</div>
-          <div class="cat-desc">Premium branded key holders that make an everyday item feel exclusive. A sophisticated corporate gift that keeps your brand visible and valued every single day.</div>
+          <div class="cat-desc">Premium branded key holders that make an everyday item feel exclusive. A sophisticated corporate gift that keeps your brand visible and valued every day.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -370,7 +382,7 @@
         <div class="cat-overlay">
           <div class="cat-num">14</div>
           <div class="cat-name">Mugs</div>
-          <div class="cat-desc">Custom branded mugs that turn every morning into a brand moment. High-quality ceramic mugs with premium full-colour printing, perfect for gifting and corporate identity.</div>
+          <div class="cat-desc">Custom branded mugs that turn every morning into a brand moment. High-quality ceramic with premium full-colour printing, perfect for gifting and corporate identity.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -380,7 +392,7 @@
         <div class="cat-overlay">
           <div class="cat-num">15</div>
           <div class="cat-name">Neon Lights</div>
-          <div class="cat-desc">Vibrant custom neon light displays that illuminate your brand, event or space with personality. Crafted to captivate, our neon pieces transform any environment into an experience.</div>
+          <div class="cat-desc">Vibrant custom neon light displays that illuminate your brand, event or space with personality. Our neon pieces transform any environment into an experience.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -390,7 +402,7 @@
         <div class="cat-overlay">
           <div class="cat-num">16</div>
           <div class="cat-name">Customised Crystal Awards</div>
-          <div class="cat-desc">Bespoke crystal award pieces designed exclusively to your specification. Every curve, inscription and detail is crafted with precision to create a one-of-a-kind symbol of honour.</div>
+          <div class="cat-desc">Bespoke crystal award pieces designed exclusively to your specification. Every curve, inscription and detail crafted with precision to create a one-of-a-kind symbol of honour.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -400,7 +412,7 @@
         <div class="cat-overlay">
           <div class="cat-num">17</div>
           <div class="cat-name">Customised Trophy Award</div>
-          <div class="cat-desc">Fully bespoke trophy designs built from the ground up to match your exact vision. No templates, no limits — just pure craftsmanship delivering a trophy as unique as the achievement it represents.</div>
+          <div class="cat-desc">Fully bespoke trophy designs built from the ground up to match your exact vision. No templates, no limits — pure craftsmanship delivering a trophy as unique as the achievement.</div>
           <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -408,7 +420,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-grid">
       <div>
@@ -440,7 +451,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="sec-header" style="margin-bottom:60px">
       <div class="sec-tag">Get In Touch</div>
@@ -492,7 +502,6 @@
     <p>Website by <span>Owosam Branding</span> 🔥</p>
   </footer>
 
-  <!-- MODAL -->
   <div class="modal" id="modal">
     <div class="modal-header">
       <div class="modal-title-wrap">
@@ -506,7 +515,6 @@
     </div>
   </div>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <button class="lb-close" onclick="closeLB()">×</button>
     <button class="lb-prev" onclick="changeLB(-1)">‹</button>
@@ -516,7 +524,6 @@
   </div>
 
   <script>
-    // PARTICLES
     const pc = document.getElementById('particles');
     for(let i=0;i<25;i++){
       const p=document.createElement('div');
@@ -529,314 +536,23 @@
     }
 
     const categories = {
-      'trophies': {
-        title: 'Trophies',
-        images: [
-          "https://i.ibb.co/VYK2XGss/Screenshot-20260525-095246-Whats-App-Business.jpg",
-          "https://i.ibb.co/CsH1PBM3/Screenshot-20260525-095243-Whats-App-Business.jpg",
-          "https://i.ibb.co/mrf2FTYR/Screenshot-20260525-095240-Whats-App-Business.jpg",
-          "https://i.ibb.co/gFRnCk8H/Screenshot-20260525-095232-Whats-App-Business.jpg",
-          "https://i.ibb.co/vvVX71Z0/Screenshot-20260525-095229-Whats-App-Business.jpg",
-          "https://i.ibb.co/V0YGWRv2/Screenshot-20260525-095226-Whats-App-Business.jpg",
-          "https://i.ibb.co/TxcGXVkc/Screenshot-20260525-095222-Whats-App-Business.jpg",
-          "https://i.ibb.co/fYL5Xm3b/Screenshot-20260525-095218-Whats-App-Business.jpg",
-          "https://i.ibb.co/4ZQxSnx0/Screenshot-20260525-095211-Whats-App-Business.jpg",
-          "https://i.ibb.co/YFqm8t6P/Screenshot-20260525-095207-Whats-App-Business.jpg",
-          "https://i.ibb.co/CpLxC5DP/Screenshot-20260525-095148-Whats-App-Business.jpg",
-          "https://i.ibb.co/G4TbGTK0/Screenshot-20260525-095144-Whats-App-Business.jpg",
-          "https://i.ibb.co/Cp5qM4BH/Screenshot-20260525-095141-Whats-App-Business.jpg",
-          "https://i.ibb.co/VcptDfSy/Screenshot-20260525-095137-Whats-App-Business.jpg",
-          "https://i.ibb.co/xK4p4K5f/Screenshot-20260525-095134-Whats-App-Business.jpg",
-          "https://i.ibb.co/HLgg4bWL/Screenshot-20260525-095131-Whats-App-Business.jpg",
-          "https://i.ibb.co/fdRCH7F9/Screenshot-20260525-095128-Whats-App-Business.jpg",
-          "https://i.ibb.co/Q3JH9BWz/Screenshot-20260525-095125-Whats-App-Business.jpg",
-          "https://i.ibb.co/yn8DjLhh/Screenshot-20260525-095121-Whats-App-Business.jpg",
-          "https://i.ibb.co/dJ253Mzn/Screenshot-20260525-095113-Whats-App-Business.jpg",
-          "https://i.ibb.co/5gsjD49t/Screenshot-20260525-095008-Whats-App-Business.jpg",
-          "https://i.ibb.co/yngBNxnD/Screenshot-20260525-095004-Whats-App-Business.jpg",
-          "https://i.ibb.co/JF71hCBP/Screenshot-20260525-094957-Whats-App-Business.jpg",
-          "https://i.ibb.co/4wLvzMjn/Screenshot-20260525-094953-Whats-App-Business.jpg",
-          "https://i.ibb.co/tpPyNcRq/Screenshot-20260525-094949-Whats-App-Business.jpg",
-          "https://i.ibb.co/4ZwZLYkq/Screenshot-20260525-094945-Whats-App-Business.jpg",
-          "https://i.ibb.co/5mckvmz/Screenshot-20260525-094942-Whats-App-Business.jpg",
-          "https://i.ibb.co/QjvL7988/Screenshot-20260525-094937-Whats-App-Business.jpg",
-          "https://i.ibb.co/R4SQwm9h/Screenshot-20260525-094904-Whats-App-Business.jpg",
-          "https://i.ibb.co/dst40sfH/Screenshot-20260525-094255-Whats-App-Business.jpg",
-          "https://i.ibb.co/MmtJqYh/Screenshot-20260525-094247-Whats-App-Business.jpg",
-          "https://i.ibb.co/KjgLVBgP/Screenshot-20260525-094241-Whats-App-Business.jpg",
-          "https://i.ibb.co/7d5pDPnS/Screenshot-20260525-094230-Whats-App-Business.jpg",
-          "https://i.ibb.co/35mKf9vt/Screenshot-20260525-094227-Whats-App-Business.jpg",
-          "https://i.ibb.co/0ydwngDz/Screenshot-20260525-094223-Whats-App-Business.jpg",
-          "https://i.ibb.co/4RVV8hCb/Screenshot-20260525-094220-Whats-App-Business.jpg",
-          "https://i.ibb.co/Mw5FWJP/Screenshot-20260525-094217-Whats-App-Business.jpg",
-          "https://i.ibb.co/YBsqbf8V/Screenshot-20260525-094212-Whats-App-Business.jpg",
-          "https://i.ibb.co/G3sJ4WLr/Screenshot-20260525-094156-Whats-App-Business.jpg",
-          "https://i.ibb.co/d4t9ZZXg/Screenshot-20260525-094154-Whats-App-Business.jpg",
-          "https://i.ibb.co/xKNryk60/Screenshot-20260525-094151-Whats-App-Business.jpg",
-          "https://i.ibb.co/NnNNVc7N/Screenshot-20260525-094147-Whats-App-Business.jpg",
-          "https://i.ibb.co/23J7KwHt/Screenshot-20260525-094144-Whats-App-Business.jpg",
-          "https://i.ibb.co/1GB5vD3t/Screenshot-20260525-094141-Whats-App-Business.jpg",
-          "https://i.ibb.co/pv9SppBR/Screenshot-20260525-094137-Whats-App-Business.jpg",
-          "https://i.ibb.co/dsKws3sB/Screenshot-20260525-094125-Whats-App-Business.jpg",
-          "https://i.ibb.co/9HTzxKxz/Screenshot-20260525-094122-Whats-App-Business.jpg",
-          "https://i.ibb.co/4Rxp0ncH/Screenshot-20260525-094017-Whats-App-Business.jpg",
-          "https://i.ibb.co/b9FHY0r/Screenshot-20260525-094013-Whats-App-Business.jpg",
-          "https://i.ibb.co/S4Xsd5tQ/Screenshot-20260525-094004-Whats-App-Business.jpg",
-          "https://i.ibb.co/7t6nFZFZ/Screenshot-20260525-093959-Whats-App-Business.jpg",
-          "https://i.ibb.co/dJrzRtNm/Screenshot-20260525-093953-Whats-App-Business.jpg",
-          "https://i.ibb.co/TqYwwCNy/Screenshot-20260525-093947-Whats-App-Business.jpg",
-          "https://i.ibb.co/TBt5Fm4w/Screenshot-20260525-093943-Whats-App-Business.jpg",
-          "https://i.ibb.co/C5D4sCCT/Screenshot-20260525-093939-Whats-App-Business.jpg",
-          "https://i.ibb.co/YSZx3Kp/Screenshot-20260525-093932-Whats-App-Business.jpg",
-          "https://i.ibb.co/QFCkd5Vf/Screenshot-20260525-093923-Whats-App-Business.jpg"
-        ]
-      },
-      'wooden-box': {
-        title: 'Wooden Boxes',
-        images: [
-          "https://i.ibb.co/23Ymstx0/Screenshot-20260525-094540-Whats-App-Business.jpg",
-          "https://i.ibb.co/nMqS5x3y/Screenshot-20260525-094520-Whats-App-Business.jpg",
-          "https://i.ibb.co/KpMKttP3/Screenshot-20260525-094525-Whats-App-Business.jpg",
-          "https://i.ibb.co/gZF04dDW/Screenshot-20260525-094516-Whats-App-Business.jpg",
-          "https://i.ibb.co/209MXJNT/Screenshot-20260525-094453-Whats-App-Business.jpg",
-          "https://i.ibb.co/6J8Xr941/Screenshot-20260525-094504-Whats-App-Business.jpg",
-          "https://i.ibb.co/kvthvRJ/Screenshot-20260525-094543-Whats-App-Business.jpg",
-          "https://i.ibb.co/cSh7ZB7b/Screenshot-20260525-094548-Whats-App-Business.jpg",
-          "https://i.ibb.co/PzZ8nrcz/Screenshot-20260525-094528-Whats-App-Business.jpg",
-          "https://i.ibb.co/20BvvszT/Screenshot-20260525-094535-Whats-App-Business.jpg",
-          "https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg",
-          "https://i.ibb.co/TMCggctb/Screenshot-20260525-095303-Whats-App-Business.jpg",
-          "https://i.ibb.co/RThx2MC3/Screenshot-20260525-095315-Whats-App-Business.jpg",
-          "https://i.ibb.co/xq4cqvqp/Screenshot-20260525-095311-Whats-App-Business.jpg",
-          "https://i.ibb.co/7xyhQMKV/Screenshot-20260525-095318-Whats-App-Business.jpg",
-          "https://i.ibb.co/mFcs9rHb/Screenshot-20260525-095328-Whats-App-Business.jpg",
-          "https://i.ibb.co/0jzGJJHY/Screenshot-20260525-095325-Whats-App-Business.jpg",
-          "https://i.ibb.co/vxqqWBtX/Screenshot-20260525-095322-Whats-App-Business.jpg",
-          "https://i.ibb.co/JWsLWrrR/Screenshot-20260525-095349-Whats-App-Business.jpg",
-          "https://i.ibb.co/bY0Bwy5/Screenshot-20260525-095401-Whats-App-Business.jpg"
-        ]
-      },
-      'crystal-trophy': {
-        title: 'Crystal Trophies',
-        images: [
-          "https://i.ibb.co/TMJXH08L/Screenshot-20260525-095058-Whats-App-Business.jpg",
-          "https://i.ibb.co/fbyDvzJ/Screenshot-20260525-095054-Whats-App-Business.jpg",
-          "https://i.ibb.co/1G9qzYTW/Screenshot-20260525-095051-Whats-App-Business.jpg",
-          "https://i.ibb.co/b5CPrQCR/Screenshot-20260525-095047-Whats-App-Business.jpg",
-          "https://i.ibb.co/zWc41K1t/Screenshot-20260525-095044-Whats-App-Business.jpg",
-          "https://i.ibb.co/SFQz86d/Screenshot-20260525-095041-Whats-App-Business.jpg",
-          "https://i.ibb.co/4RTHJV5Z/Screenshot-20260525-095037-Whats-App-Business.jpg",
-          "https://i.ibb.co/J09nLts/Screenshot-20260525-095032-Whats-App-Business.jpg",
-          "https://i.ibb.co/JDrgfWf/Screenshot-20260525-095029-Whats-App-Business.jpg",
-          "https://i.ibb.co/Zp66yR1G/Screenshot-20260525-095024-Whats-App-Business.jpg",
-          "https://i.ibb.co/DHF03TKs/Screenshot-20260525-094924-Whats-App-Business.jpg",
-          "https://i.ibb.co/ch8N9NVt/Screenshot-20260525-094921-Whats-App-Business.jpg",
-          "https://i.ibb.co/qLJrSmFp/Screenshot-20260525-094918-Whats-App-Business.jpg",
-          "https://i.ibb.co/1JbTJdLk/Screenshot-20260525-094915-Whats-App-Business.jpg",
-          "https://i.ibb.co/hJRhWvtN/Screenshot-20260525-094911-Whats-App-Business.jpg",
-          "https://i.ibb.co/fV9FFWNs/Screenshot-20260525-094901-Whats-App-Business.jpg",
-          "https://i.ibb.co/46MFPKT/Screenshot-20260525-094857-Whats-App-Business.jpg",
-          "https://i.ibb.co/chPQb6RD/Screenshot-20260525-094850-Whats-App-Business.jpg",
-          "https://i.ibb.co/cKwmyPJX/Screenshot-20260525-094908-Whats-App-Business.jpg"
-        ]
-      },
-      'medals': {
-        title: 'Medals',
-        images: [
-          "https://i.ibb.co/mYYgJx1/Screenshot-20260525-094815-Whats-App-Business.jpg",
-          "https://i.ibb.co/SXGDQmbV/Screenshot-20260525-094821-Whats-App-Business.jpg",
-          "https://i.ibb.co/Vc9Q0b9g/Screenshot-20260525-094828-Whats-App-Business.jpg",
-          "https://i.ibb.co/d4mmTzJf/Screenshot-20260525-094818-Whats-App-Business.jpg",
-          "https://i.ibb.co/0jQf4fXs/Screenshot-20260525-094836-Whats-App-Business.jpg",
-          "https://i.ibb.co/5WCb74NV/Screenshot-20260525-094824-Whats-App-Business.jpg"
-        ]
-      },
-      'crystal-awards': {
-        title: 'Crystal Awards',
-        images: [
-          "https://i.ibb.co/0Rn7qGR4/Screenshot-20260525-094108-Whats-App-Business.jpg",
-          "https://i.ibb.co/WWR1FNN2/Screenshot-20260525-094104-Whats-App-Business.jpg",
-          "https://i.ibb.co/zWXmNDXv/Screenshot-20260525-094100-Whats-App-Business.jpg",
-          "https://i.ibb.co/xtFfXBQp/Screenshot-20260525-094056-Whats-App-Business.jpg",
-          "https://i.ibb.co/WpMYJLvh/Screenshot-20260525-094052-Whats-App-Business.jpg",
-          "https://i.ibb.co/1ft98nN6/Screenshot-20260525-094046-Whats-App-Business.jpg",
-          "https://i.ibb.co/ymyLzjcf/Screenshot-20260525-094041-Whats-App-Business.jpg",
-          "https://i.ibb.co/SwhYx148/Screenshot-20260525-094037-Whats-App-Business.jpg",
-          "https://i.ibb.co/NgPKrNPQ/Screenshot-20260525-094033-Whats-App-Business.jpg",
-          "https://i.ibb.co/G4ZmW3GV/Screenshot-20260525-094029-Whats-App-Business.jpg",
-          "https://i.ibb.co/274y9TYq/Screenshot-20260525-093843-Whats-App-Business.jpg",
-          "https://i.ibb.co/cctF4xPp/Screenshot-20260525-093814-Whats-App-Business.jpg",
-          "https://i.ibb.co/MDfHLZBv/Screenshot-20260525-093808-Whats-App-Business.jpg",
-          "https://i.ibb.co/FbQZ75YC/Screenshot-20260525-093835-Whats-App-Business.jpg",
-          "https://i.ibb.co/wrCMMBK9/Screenshot-20260525-093829-Whats-App-Business.jpg",
-          "https://i.ibb.co/qLT3cdfk/Screenshot-20260525-093823-Whats-App-Business.jpg",
-          "https://i.ibb.co/MkgWTVzx/Screenshot-20260525-093801-Whats-App-Business.jpg",
-          "https://i.ibb.co/YFQY44HN/Screenshot-20260525-093755-Whats-App-Business.jpg",
-          "https://i.ibb.co/zHWt2z2s/Screenshot-20260525-093726-Whats-App-Business.jpg",
-          "https://i.ibb.co/23S0zV8Z/Screenshot-20260525-093739-Whats-App-Business.jpg",
-          "https://i.ibb.co/5g7mCtHz/Screenshot-20260525-093703-Whats-App-Business.jpg",
-          "https://i.ibb.co/1JTdr2BZ/Screenshot-20260525-093501-Whats-App-Business.jpg",
-          "https://i.ibb.co/V0dyBtPF/Screenshot-20260525-093449-Whats-App-Business.jpg",
-          "https://i.ibb.co/TByzpp09/Screenshot-20260525-093440-Whats-App-Business.jpg",
-          "https://i.ibb.co/4kKZLph/Screenshot-20260525-093432-Whats-App-Business.jpg",
-          "https://i.ibb.co/6cNgXRJz/Screenshot-20260525-093423-Whats-App-Business.jpg",
-          "https://i.ibb.co/Cpm8tcSX/Screenshot-20260525-093415-Whats-App-Business.jpg",
-          "https://i.ibb.co/prWLqygs/Screenshot-20260525-093355-Whats-App-Business.jpg",
-          "https://i.ibb.co/DfBxh4xD/Screenshot-20260525-093052-Whats-App-Business.jpg",
-          "https://i.ibb.co/7N0CXJ5P/Screenshot-20260525-093044-Whats-App-Business.jpg",
-          "https://i.ibb.co/pvgnKYcx/Screenshot-20260525-093020-Whats-App-Business.jpg",
-          "https://i.ibb.co/tMVMZxq1/Screenshot-20260525-093006-Whats-App-Business.jpg",
-          "https://i.ibb.co/tTV6XTw8/Screenshot-20260525-092944-Whats-App-Business.jpg",
-          "https://i.ibb.co/v4VzLW4C/Screenshot-20260525-092934-Whats-App-Business.jpg"
-        ]
-      },
-      'wood-awards': {
-        title: 'Wood Awards',
-        images: [
-          "https://i.ibb.co/HMrb1ng/Screenshot-20260525-093322-Whats-App-Business.jpg",
-          "https://i.ibb.co/mVPcKNYZ/Screenshot-20260525-093330-Whats-App-Business.jpg",
-          "https://i.ibb.co/s910B87M/Screenshot-20260525-093338-Whats-App-Business.jpg",
-          "https://i.ibb.co/hRCjQQYb/Screenshot-20260525-093303-Whats-App-Business.jpg",
-          "https://i.ibb.co/hFZ6ZL7x/Screenshot-20260525-093223-Whats-App-Business.jpg",
-          "https://i.ibb.co/chWZd2zk/Screenshot-20260525-093214-Whats-App-Business.jpg",
-          "https://i.ibb.co/67DsrBTV/Screenshot-20260525-093312-Whats-App-Business.jpg",
-          "https://i.ibb.co/XZXMQYgG/Screenshot-20260525-093203-Whats-App-Business.jpg",
-          "https://i.ibb.co/GvdNchFM/Screenshot-20260525-093155-Whats-App-Business.jpg",
-          "https://i.ibb.co/W4vKzxDM/Screenshot-20260525-093141-Whats-App-Business.jpg",
-          "https://i.ibb.co/qLtfzfvD/Screenshot-20260525-092540-Whats-App-Business.jpg",
-          "https://i.ibb.co/j9bK9ZRf/Screenshot-20260525-092516-Whats-App-Business.jpg",
-          "https://i.ibb.co/84K3rn1k/Screenshot-20260525-092529-Whats-App-Business.jpg",
-          "https://i.ibb.co/S7fwnV3F/Screenshot-20260525-092459-Whats-App-Business.jpg",
-          "https://i.ibb.co/nN7b8xPk/Screenshot-20260525-092443-Whats-App-Business.jpg",
-          "https://i.ibb.co/mV4bLs9x/Screenshot-20260525-092432-Whats-App-Business.jpg",
-          "https://i.ibb.co/svWfk9yq/Screenshot-20260525-092421-Whats-App-Business.jpg",
-          "https://i.ibb.co/TBrgn0T2/Screenshot-20260525-092413-Whats-App-Business.jpg",
-          "https://i.ibb.co/8ghGL33h/Screenshot-20260525-092403-Whats-App-Business.jpg",
-          "https://i.ibb.co/TBrn84c9/Screenshot-20260525-092328-Whats-App-Business.jpg"
-        ]
-      },
-      'cup-trophy': {
-        title: 'Cup Trophy Awards',
-        images: [
-          "https://i.ibb.co/sJbdGQQd/Screenshot-20260525-095610-Whats-App-Business.jpg",
-          "https://i.ibb.co/39F58PfW/Screenshot-20260525-095613-Whats-App-Business.jpg",
-          "https://i.ibb.co/35WRdP6H/Screenshot-20260525-095558-Whats-App-Business.jpg",
-          "https://i.ibb.co/67TKwTxc/Screenshot-20260525-095554-Whats-App-Business.jpg",
-          "https://i.ibb.co/hJqpXdKb/Screenshot-20260525-095544-Whats-App-Business.jpg",
-          "https://i.ibb.co/kV1RQR64/Screenshot-20260525-095540-Whats-App-Business.jpg",
-          "https://i.ibb.co/9krmd1C7/Screenshot-20260525-095537-Whats-App-Business.jpg",
-          "https://i.ibb.co/SXXCCkPD/Screenshot-20260525-095527-Whats-App-Business.jpg"
-        ]
-      },
-      '3d-awards': {
-        title: '3D Awards',
-        images: [
-          "https://i.ibb.co/twms1HdR/Screenshot-20260525-094326-Whats-App-Business.jpg",
-          "https://i.ibb.co/7J1rvSVL/Screenshot-20260525-094405-Whats-App-Business.jpg",
-          "https://i.ibb.co/ksRCYdjD/Screenshot-20260525-094352-Whats-App-Business.jpg",
-          "https://i.ibb.co/hRn8vNnz/Screenshot-20260525-094408-Whats-App-Business.jpg",
-          "https://i.ibb.co/spmSWdVM/Screenshot-20260525-094411-Whats-App-Business.jpg",
-          "https://i.ibb.co/35XxQND6/Screenshot-20260525-094421-Whats-App-Business.jpg",
-          "https://i.ibb.co/DgzLdCXt/Screenshot-20260525-094418-Whats-App-Business.jpg",
-          "https://i.ibb.co/nXyYCqs/Screenshot-20260525-094415-Whats-App-Business.jpg",
-          "https://i.ibb.co/ny6p96g/Screenshot-20260525-094424-Whats-App-Business.jpg"
-        ]
-      },
-      'acrylic-awards': {
-        title: 'Acrylic Awards',
-        images: [
-          "https://i.ibb.co/dsz5FqvT/Screenshot-20260525-092911-Whats-App-Business.jpg",
-          "https://i.ibb.co/CKcWhTcv/Screenshot-20260525-092854-Whats-App-Business.jpg",
-          "https://i.ibb.co/7d0x5xk6/Screenshot-20260525-092844-Whats-App-Business.jpg",
-          "https://i.ibb.co/nN4X4V9H/Screenshot-20260525-092833-Whats-App-Business.jpg",
-          "https://i.ibb.co/JN4yvqX/Screenshot-20260525-092826-Whats-App-Business.jpg",
-          "https://i.ibb.co/xtZp5stp/Screenshot-20260525-092816-Whats-App-Business.jpg",
-          "https://i.ibb.co/20wFzcZm/Screenshot-20260525-092712-Whats-App-Business.jpg",
-          "https://i.ibb.co/7t6K97pp/Screenshot-20260525-092700-Whats-App-Business.jpg",
-          "https://i.ibb.co/fVvDjmw4/Screenshot-20260525-092806-Whats-App-Business.jpg",
-          "https://i.ibb.co/hJ6syhcN/Screenshot-20260525-092750-Whats-App-Business.jpg"
-        ]
-      },
-      'throw-pillows': {
-        title: 'Throw Pillows',
-        images: [
-          "https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg",
-          "https://i.ibb.co/TM7Wjrjd/Screenshot-20260525-094704-Whats-App-Business.jpg",
-          "https://i.ibb.co/VYvSwssb/Screenshot-20260525-094701-Whats-App-Business.jpg",
-          "https://i.ibb.co/JWBpyvhs/Screenshot-20260525-094649-Whats-App-Business.jpg",
-          "https://i.ibb.co/8LFTbZq3/Screenshot-20260525-094652-Whats-App-Business.jpg",
-          "https://i.ibb.co/qLDTvjTY/Screenshot-20260525-094728-Whats-App-Business.jpg",
-          "https://i.ibb.co/4gnbqFYC/Screenshot-20260525-094714-Whats-App-Business.jpg"
-        ]
-      },
-      'diaries': {
-        title: 'Diaries',
-        images: [
-          "https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg",
-          "https://i.ibb.co/TMCggctb/Screenshot-20260525-095303-Whats-App-Business.jpg",
-          "https://i.ibb.co/RThx2MC3/Screenshot-20260525-095315-Whats-App-Business.jpg",
-          "https://i.ibb.co/xq4cqvqp/Screenshot-20260525-095311-Whats-App-Business.jpg",
-          "https://i.ibb.co/7xyhQMKV/Screenshot-20260525-095318-Whats-App-Business.jpg",
-          "https://i.ibb.co/mFcs9rHb/Screenshot-20260525-095328-Whats-App-Business.jpg",
-          "https://i.ibb.co/0jzGJJHY/Screenshot-20260525-095325-Whats-App-Business.jpg",
-          "https://i.ibb.co/vxqqWBtX/Screenshot-20260525-095322-Whats-App-Business.jpg",
-          "https://i.ibb.co/JWsLWrrR/Screenshot-20260525-095349-Whats-App-Business.jpg",
-          "https://i.ibb.co/bY0Bwy5/Screenshot-20260525-095401-Whats-App-Business.jpg",
-          "https://i.ibb.co/Ng8rzY6d/Screenshot-20260525-095650-Whats-App-Business.jpg",
-          "https://i.ibb.co/tPMPZzMk/Screenshot-20260525-095653-Whats-App-Business.jpg",
-          "https://i.ibb.co/HDDcxm8X/Screenshot-20260525-095700-Whats-App-Business.jpg",
-          "https://i.ibb.co/R4Ctt70F/Screenshot-20260525-095657-Whats-App-Business.jpg"
-        ]
-      },
-      'tshirts': {
-        title: 'T-Shirts',
-        images: [
-          "https://i.ibb.co/TM7MtZDq/Screenshot-20260525-095707-Whats-App-Business.jpg",
-          "https://i.ibb.co/kk2Hrdw/Screenshot-20260525-095703-Whats-App-Business.jpg"
-        ]
-      },
-      'key-holders': {
-        title: 'Key Holders',
-        images: [
-          "https://i.ibb.co/RkTTg8rN/Screenshot-20260525-095646-Whats-App-Business.jpg",
-          "https://i.ibb.co/Y79DJhww/Screenshot-20260525-095642-Whats-App-Business.jpg"
-        ]
-      },
-      'mugs': {
-        title: 'Mugs',
-        images: [
-          "https://i.ibb.co/zhjxyx5f/Screenshot-20260525-095639-Whats-App-Business.jpg",
-          "https://i.ibb.co/Wpx7FZb3/Screenshot-20260525-095628-Whats-App-Business.jpg"
-        ]
-      },
-      'neon': {
-        title: 'Neon Lights',
-        images: [
-          "https://i.ibb.co/84s2VntF/Screenshot-20260525-095452-Whats-App-Business.jpg",
-          "https://i.ibb.co/VGsRHW7/Screenshot-20260525-095448-Whats-App-Business.jpg",
-          "https://i.ibb.co/5yYC513/Screenshot-20260525-095445-Whats-App-Business.jpg",
-          "https://i.ibb.co/HDP6gymc/Screenshot-20260525-095442-Whats-App-Business.jpg",
-          "https://i.ibb.co/W42qCrs2/Screenshot-20260525-095439-Whats-App-Business.jpg",
-          "https://i.ibb.co/4nM2m21G/Screenshot-20260525-095435-Whats-App-Business.jpg",
-          "https://i.ibb.co/qFJrGcj7/Screenshot-20260525-095432-Whats-App-Business.jpg",
-          "https://i.ibb.co/9kTs48wH/Screenshot-20260525-095428-Whats-App-Business.jpg",
-          "https://i.ibb.co/hxdQ56TP/Screenshot-20260525-095423-Whats-App-Business.jpg",
-          "https://i.ibb.co/JRXRxZZc/Screenshot-20260525-095417-Whats-App-Business.jpg"
-        ]
-      },
-      'custom-crystal': {
-        title: 'Customised Crystal Awards',
-        images: [
-          "https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg",
-          "https://i.ibb.co/srsDShh/Screenshot-20260525-094741-Whats-App-Business.jpg"
-        ]
-      },
-      'custom-trophy': {
-        title: 'Customised Trophy Award',
-        images: [
-          "https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg"
-        ]
-      }
+      'trophies': { title: 'Trophies', images: ["https://i.ibb.co/VYK2XGss/Screenshot-20260525-095246-Whats-App-Business.jpg","https://i.ibb.co/CsH1PBM3/Screenshot-20260525-095243-Whats-App-Business.jpg","https://i.ibb.co/mrf2FTYR/Screenshot-20260525-095240-Whats-App-Business.jpg","https://i.ibb.co/gFRnCk8H/Screenshot-20260525-095232-Whats-App-Business.jpg","https://i.ibb.co/vvVX71Z0/Screenshot-20260525-095229-Whats-App-Business.jpg","https://i.ibb.co/V0YGWRv2/Screenshot-20260525-095226-Whats-App-Business.jpg","https://i.ibb.co/TxcGXVkc/Screenshot-20260525-095222-Whats-App-Business.jpg","https://i.ibb.co/fYL5Xm3b/Screenshot-20260525-095218-Whats-App-Business.jpg","https://i.ibb.co/4ZQxSnx0/Screenshot-20260525-095211-Whats-App-Business.jpg","https://i.ibb.co/YFqm8t6P/Screenshot-20260525-095207-Whats-App-Business.jpg","https://i.ibb.co/CpLxC5DP/Screenshot-20260525-095148-Whats-App-Business.jpg","https://i.ibb.co/G4TbGTK0/Screenshot-20260525-095144-Whats-App-Business.jpg","https://i.ibb.co/Cp5qM4BH/Screenshot-20260525-095141-Whats-App-Business.jpg","https://i.ibb.co/VcptDfSy/Screenshot-20260525-095137-Whats-App-Business.jpg","https://i.ibb.co/xK4p4K5f/Screenshot-20260525-095134-Whats-App-Business.jpg","https://i.ibb.co/HLgg4bWL/Screenshot-20260525-095131-Whats-App-Business.jpg","https://i.ibb.co/fdRCH7F9/Screenshot-20260525-095128-Whats-App-Business.jpg","https://i.ibb.co/Q3JH9BWz/Screenshot-20260525-095125-Whats-App-Business.jpg","https://i.ibb.co/yn8DjLhh/Screenshot-20260525-095121-Whats-App-Business.jpg","https://i.ibb.co/dJ253Mzn/Screenshot-20260525-095113-Whats-App-Business.jpg","https://i.ibb.co/5gsjD49t/Screenshot-20260525-095008-Whats-App-Business.jpg","https://i.ibb.co/yngBNxnD/Screenshot-20260525-095004-Whats-App-Business.jpg","https://i.ibb.co/JF71hCBP/Screenshot-20260525-094957-Whats-App-Business.jpg","https://i.ibb.co/4wLvzMjn/Screenshot-20260525-094953-Whats-App-Business.jpg","https://i.ibb.co/tpPyNcRq/Screenshot-20260525-094949-Whats-App-Business.jpg","https://i.ibb.co/4ZwZLYkq/Screenshot-20260525-094945-Whats-App-Business.jpg","https://i.ibb.co/5mckvmz/Screenshot-20260525-094942-Whats-App-Business.jpg","https://i.ibb.co/QjvL7988/Screenshot-20260525-094937-Whats-App-Business.jpg","https://i.ibb.co/R4SQwm9h/Screenshot-20260525-094904-Whats-App-Business.jpg","https://i.ibb.co/dst40sfH/Screenshot-20260525-094255-Whats-App-Business.jpg","https://i.ibb.co/MmtJqYh/Screenshot-20260525-094247-Whats-App-Business.jpg","https://i.ibb.co/KjgLVBgP/Screenshot-20260525-094241-Whats-App-Business.jpg","https://i.ibb.co/7d5pDPnS/Screenshot-20260525-094230-Whats-App-Business.jpg","https://i.ibb.co/35mKf9vt/Screenshot-20260525-094227-Whats-App-Business.jpg","https://i.ibb.co/0ydwngDz/Screenshot-20260525-094223-Whats-App-Business.jpg","https://i.ibb.co/4RVV8hCb/Screenshot-20260525-094220-Whats-App-Business.jpg","https://i.ibb.co/Mw5FWJP/Screenshot-20260525-094217-Whats-App-Business.jpg","https://i.ibb.co/YBsqbf8V/Screenshot-20260525-094212-Whats-App-Business.jpg","https://i.ibb.co/G3sJ4WLr/Screenshot-20260525-094156-Whats-App-Business.jpg","https://i.ibb.co/d4t9ZZXg/Screenshot-20260525-094154-Whats-App-Business.jpg","https://i.ibb.co/xKNryk60/Screenshot-20260525-094151-Whats-App-Business.jpg","https://i.ibb.co/NnNNVc7N/Screenshot-20260525-094147-Whats-App-Business.jpg","https://i.ibb.co/23J7KwHt/Screenshot-20260525-094144-Whats-App-Business.jpg","https://i.ibb.co/1GB5vD3t/Screenshot-20260525-094141-Whats-App-Business.jpg","https://i.ibb.co/pv9SppBR/Screenshot-20260525-094137-Whats-App-Business.jpg","https://i.ibb.co/dsKws3sB/Screenshot-20260525-094125-Whats-App-Business.jpg","https://i.ibb.co/9HTzxKxz/Screenshot-20260525-094122-Whats-App-Business.jpg","https://i.ibb.co/4Rxp0ncH/Screenshot-20260525-094017-Whats-App-Business.jpg","https://i.ibb.co/b9FHY0r/Screenshot-20260525-094013-Whats-App-Business.jpg","https://i.ibb.co/S4Xsd5tQ/Screenshot-20260525-094004-Whats-App-Business.jpg","https://i.ibb.co/7t6nFZFZ/Screenshot-20260525-093959-Whats-App-Business.jpg","https://i.ibb.co/dJrzRtNm/Screenshot-20260525-093953-Whats-App-Business.jpg","https://i.ibb.co/TqYwwCNy/Screenshot-20260525-093947-Whats-App-Business.jpg","https://i.ibb.co/TBt5Fm4w/Screenshot-20260525-093943-Whats-App-Business.jpg","https://i.ibb.co/C5D4sCCT/Screenshot-20260525-093939-Whats-App-Business.jpg","https://i.ibb.co/YSZx3Kp/Screenshot-20260525-093932-Whats-App-Business.jpg","https://i.ibb.co/QFCkd5Vf/Screenshot-20260525-093923-Whats-App-Business.jpg"] },
+      'wooden-box': { title: 'Wooden Boxes', images: ["https://i.ibb.co/23Ymstx0/Screenshot-20260525-094540-Whats-App-Business.jpg","https://i.ibb.co/nMqS5x3y/Screenshot-20260525-094520-Whats-App-Business.jpg","https://i.ibb.co/KpMKttP3/Screenshot-20260525-094525-Whats-App-Business.jpg","https://i.ibb.co/gZF04dDW/Screenshot-20260525-094516-Whats-App-Business.jpg","https://i.ibb.co/209MXJNT/Screenshot-20260525-094453-Whats-App-Business.jpg","https://i.ibb.co/6J8Xr941/Screenshot-20260525-094504-Whats-App-Business.jpg","https://i.ibb.co/kvthvRJ/Screenshot-20260525-094543-Whats-App-Business.jpg","https://i.ibb.co/cSh7ZB7b/Screenshot-20260525-094548-Whats-App-Business.jpg","https://i.ibb.co/PzZ8nrcz/Screenshot-20260525-094528-Whats-App-Business.jpg","https://i.ibb.co/20BvvszT/Screenshot-20260525-094535-Whats-App-Business.jpg","https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg","https://i.ibb.co/TMCggctb/Screenshot-20260525-095303-Whats-App-Business.jpg","https://i.ibb.co/RThx2MC3/Screenshot-20260525-095315-Whats-App-Business.jpg","https://i.ibb.co/xq4cqvqp/Screenshot-20260525-095311-Whats-App-Business.jpg","https://i.ibb.co/7xyhQMKV/Screenshot-20260525-095318-Whats-App-Business.jpg","https://i.ibb.co/mFcs9rHb/Screenshot-20260525-095328-Whats-App-Business.jpg","https://i.ibb.co/0jzGJJHY/Screenshot-20260525-095325-Whats-App-Business.jpg","https://i.ibb.co/vxqqWBtX/Screenshot-20260525-095322-Whats-App-Business.jpg","https://i.ibb.co/JWsLWrrR/Screenshot-20260525-095349-Whats-App-Business.jpg","https://i.ibb.co/bY0Bwy5/Screenshot-20260525-095401-Whats-App-Business.jpg"] },
+      'crystal-trophy': { title: 'Crystal Trophies', images: ["https://i.ibb.co/TMJXH08L/Screenshot-20260525-095058-Whats-App-Business.jpg","https://i.ibb.co/fbyDvzJ/Screenshot-20260525-095054-Whats-App-Business.jpg","https://i.ibb.co/1G9qzYTW/Screenshot-20260525-095051-Whats-App-Business.jpg","https://i.ibb.co/b5CPrQCR/Screenshot-20260525-095047-Whats-App-Business.jpg","https://i.ibb.co/zWc41K1t/Screenshot-20260525-095044-Whats-App-Business.jpg","https://i.ibb.co/SFQz86d/Screenshot-20260525-095041-Whats-App-Business.jpg","https://i.ibb.co/4RTHJV5Z/Screenshot-20260525-095037-Whats-App-Business.jpg","https://i.ibb.co/J09nLts/Screenshot-20260525-095032-Whats-App-Business.jpg","https://i.ibb.co/JDrgfWf/Screenshot-20260525-095029-Whats-App-Business.jpg","https://i.ibb.co/Zp66yR1G/Screenshot-20260525-095024-Whats-App-Business.jpg","https://i.ibb.co/DHF03TKs/Screenshot-20260525-094924-Whats-App-Business.jpg","https://i.ibb.co/ch8N9NVt/Screenshot-20260525-094921-Whats-App-Business.jpg","https://i.ibb.co/qLJrSmFp/Screenshot-20260525-094918-Whats-App-Business.jpg","https://i.ibb.co/1JbTJdLk/Screenshot-20260525-094915-Whats-App-Business.jpg","https://i.ibb.co/hJRhWvtN/Screenshot-20260525-094911-Whats-App-Business.jpg","https://i.ibb.co/fV9FFWNs/Screenshot-20260525-094901-Whats-App-Business.jpg","https://i.ibb.co/46MFPKT/Screenshot-20260525-094857-Whats-App-Business.jpg","https://i.ibb.co/chPQb6RD/Screenshot-20260525-094850-Whats-App-Business.jpg","https://i.ibb.co/cKwmyPJX/Screenshot-20260525-094908-Whats-App-Business.jpg"] },
+      'medals': { title: 'Medals', images: ["https://i.ibb.co/mYYgJx1/Screenshot-20260525-094815-Whats-App-Business.jpg","https://i.ibb.co/SXGDQmbV/Screenshot-20260525-094821-Whats-App-Business.jpg","https://i.ibb.co/Vc9Q0b9g/Screenshot-20260525-094828-Whats-App-Business.jpg","https://i.ibb.co/d4mmTzJf/Screenshot-20260525-094818-Whats-App-Business.jpg","https://i.ibb.co/0jQf4fXs/Screenshot-20260525-094836-Whats-App-Business.jpg","https://i.ibb.co/5WCb74NV/Screenshot-20260525-094824-Whats-App-Business.jpg"] },
+      'crystal-awards': { title: 'Crystal Awards', images: ["https://i.ibb.co/0Rn7qGR4/Screenshot-20260525-094108-Whats-App-Business.jpg","https://i.ibb.co/WWR1FNN2/Screenshot-20260525-094104-Whats-App-Business.jpg","https://i.ibb.co/zWXmNDXv/Screenshot-20260525-094100-Whats-App-Business.jpg","https://i.ibb.co/xtFfXBQp/Screenshot-20260525-094056-Whats-App-Business.jpg","https://i.ibb.co/WpMYJLvh/Screenshot-20260525-094052-Whats-App-Business.jpg","https://i.ibb.co/1ft98nN6/Screenshot-20260525-094046-Whats-App-Business.jpg","https://i.ibb.co/ymyLzjcf/Screenshot-20260525-094041-Whats-App-Business.jpg","https://i.ibb.co/SwhYx148/Screenshot-20260525-094037-Whats-App-Business.jpg","https://i.ibb.co/NgPKrNPQ/Screenshot-20260525-094033-Whats-App-Business.jpg","https://i.ibb.co/G4ZmW3GV/Screenshot-20260525-094029-Whats-App-Business.jpg","https://i.ibb.co/274y9TYq/Screenshot-20260525-093843-Whats-App-Business.jpg","https://i.ibb.co/cctF4xPp/Screenshot-20260525-093814-Whats-App-Business.jpg","https://i.ibb.co/MDfHLZBv/Screenshot-20260525-093808-Whats-App-Business.jpg","https://i.ibb.co/FbQZ75YC/Screenshot-20260525-093835-Whats-App-Business.jpg","https://i.ibb.co/wrCMMBK9/Screenshot-20260525-093829-Whats-App-Business.jpg","https://i.ibb.co/qLT3cdfk/Screenshot-20260525-093823-Whats-App-Business.jpg","https://i.ibb.co/MkgWTVzx/Screenshot-20260525-093801-Whats-App-Business.jpg","https://i.ibb.co/YFQY44HN/Screenshot-20260525-093755-Whats-App-Business.jpg","https://i.ibb.co/zHWt2z2s/Screenshot-20260525-093726-Whats-App-Business.jpg","https://i.ibb.co/23S0zV8Z/Screenshot-20260525-093739-Whats-App-Business.jpg","https://i.ibb.co/5g7mCtHz/Screenshot-20260525-093703-Whats-App-Business.jpg","https://i.ibb.co/1JTdr2BZ/Screenshot-20260525-093501-Whats-App-Business.jpg","https://i.ibb.co/V0dyBtPF/Screenshot-20260525-093449-Whats-App-Business.jpg","https://i.ibb.co/TByzpp09/Screenshot-20260525-093440-Whats-App-Business.jpg","https://i.ibb.co/4kKZLph/Screenshot-20260525-093432-Whats-App-Business.jpg","https://i.ibb.co/6cNgXRJz/Screenshot-20260525-093423-Whats-App-Business.jpg","https://i.ibb.co/Cpm8tcSX/Screenshot-20260525-093415-Whats-App-Business.jpg","https://i.ibb.co/prWLqygs/Screenshot-20260525-093355-Whats-App-Business.jpg","https://i.ibb.co/DfBxh4xD/Screenshot-20260525-093052-Whats-App-Business.jpg","https://i.ibb.co/7N0CXJ5P/Screenshot-20260525-093044-Whats-App-Business.jpg","https://i.ibb.co/pvgnKYcx/Screenshot-20260525-093020-Whats-App-Business.jpg","https://i.ibb.co/tMVMZxq1/Screenshot-20260525-093006-Whats-App-Business.jpg","https://i.ibb.co/tTV6XTw8/Screenshot-20260525-092944-Whats-App-Business.jpg","https://i.ibb.co/v4VzLW4C/Screenshot-20260525-092934-Whats-App-Business.jpg"] },
+      'wood-awards': { title: 'Wood Awards', images: ["https://i.ibb.co/HMrb1ng/Screenshot-20260525-093322-Whats-App-Business.jpg","https://i.ibb.co/mVPcKNYZ/Screenshot-20260525-093330-Whats-App-Business.jpg","https://i.ibb.co/s910B87M/Screenshot-20260525-093338-Whats-App-Business.jpg","https://i.ibb.co/hRCjQQYb/Screenshot-20260525-093303-Whats-App-Business.jpg","https://i.ibb.co/hFZ6ZL7x/Screenshot-20260525-093223-Whats-App-Business.jpg","https://i.ibb.co/chWZd2zk/Screenshot-20260525-093214-Whats-App-Business.jpg","https://i.ibb.co/67DsrBTV/Screenshot-20260525-093312-Whats-App-Business.jpg","https://i.ibb.co/XZXMQYgG/Screenshot-20260525-093203-Whats-App-Business.jpg","https://i.ibb.co/GvdNchFM/Screenshot-20260525-093155-Whats-App-Business.jpg","https://i.ibb.co/W4vKzxDM/Screenshot-20260525-093141-Whats-App-Business.jpg","https://i.ibb.co/qLtfzfvD/Screenshot-20260525-092540-Whats-App-Business.jpg","https://i.ibb.co/j9bK9ZRf/Screenshot-20260525-092516-Whats-App-Business.jpg","https://i.ibb.co/84K3rn1k/Screenshot-20260525-092529-Whats-App-Business.jpg","https://i.ibb.co/S7fwnV3F/Screenshot-20260525-092459-Whats-App-Business.jpg","https://i.ibb.co/nN7b8xPk/Screenshot-20260525-092443-Whats-App-Business.jpg","https://i.ibb.co/mV4bLs9x/Screenshot-20260525-092432-Whats-App-Business.jpg","https://i.ibb.co/svWfk9yq/Screenshot-20260525-092421-Whats-App-Business.jpg","https://i.ibb.co/TBrgn0T2/Screenshot-20260525-092413-Whats-App-Business.jpg","https://i.ibb.co/8ghGL33h/Screenshot-20260525-092403-Whats-App-Business.jpg","https://i.ibb.co/TBrn84c9/Screenshot-20260525-092328-Whats-App-Business.jpg"] },
+      'cup-trophy': { title: 'Cup Trophy Awards', images: ["https://i.ibb.co/sJbdGQQd/Screenshot-20260525-095610-Whats-App-Business.jpg","https://i.ibb.co/39F58PfW/Screenshot-20260525-095613-Whats-App-Business.jpg","https://i.ibb.co/35WRdP6H/Screenshot-20260525-095558-Whats-App-Business.jpg","https://i.ibb.co/67TKwTxc/Screenshot-20260525-095554-Whats-App-Business.jpg","https://i.ibb.co/hJqpXdKb/Screenshot-20260525-095544-Whats-App-Business.jpg","https://i.ibb.co/kV1RQR64/Screenshot-20260525-095540-Whats-App-Business.jpg","https://i.ibb.co/9krmd1C7/Screenshot-20260525-095537-Whats-App-Business.jpg","https://i.ibb.co/SXXCCkPD/Screenshot-20260525-095527-Whats-App-Business.jpg"] },
+      '3d-awards': { title: '3D Awards', images: ["https://i.ibb.co/twms1HdR/Screenshot-20260525-094326-Whats-App-Business.jpg","https://i.ibb.co/7J1rvSVL/Screenshot-20260525-094405-Whats-App-Business.jpg","https://i.ibb.co/ksRCYdjD/Screenshot-20260525-094352-Whats-App-Business.jpg","https://i.ibb.co/hRn8vNnz/Screenshot-20260525-094408-Whats-App-Business.jpg","https://i.ibb.co/spmSWdVM/Screenshot-20260525-094411-Whats-App-Business.jpg","https://i.ibb.co/35XxQND6/Screenshot-20260525-094421-Whats-App-Business.jpg","https://i.ibb.co/DgzLdCXt/Screenshot-20260525-094418-Whats-App-Business.jpg","https://i.ibb.co/nXyYCqs/Screenshot-20260525-094415-Whats-App-Business.jpg","https://i.ibb.co/ny6p96g/Screenshot-20260525-094424-Whats-App-Business.jpg"] },
+      'acrylic-awards': { title: 'Acrylic Awards', images: ["https://i.ibb.co/dsz5FqvT/Screenshot-20260525-092911-Whats-App-Business.jpg","https://i.ibb.co/CKcWhTcv/Screenshot-20260525-092854-Whats-App-Business.jpg","https://i.ibb.co/7d0x5xk6/Screenshot-20260525-092844-Whats-App-Business.jpg","https://i.ibb.co/nN4X4V9H/Screenshot-20260525-092833-Whats-App-Business.jpg","https://i.ibb.co/JN4yvqX/Screenshot-20260525-092826-Whats-App-Business.jpg","https://i.ibb.co/xtZp5stp/Screenshot-20260525-092816-Whats-App-Business.jpg","https://i.ibb.co/20wFzcZm/Screenshot-20260525-092712-Whats-App-Business.jpg","https://i.ibb.co/7t6K97pp/Screenshot-20260525-092700-Whats-App-Business.jpg","https://i.ibb.co/fVvDjmw4/Screenshot-20260525-092806-Whats-App-Business.jpg","https://i.ibb.co/hJ6syhcN/Screenshot-20260525-092750-Whats-App-Business.jpg"] },
+      'throw-pillows': { title: 'Throw Pillows', images: ["https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg","https://i.ibb.co/TM7Wjrjd/Screenshot-20260525-094704-Whats-App-Business.jpg","https://i.ibb.co/VYvSwssb/Screenshot-20260525-094701-Whats-App-Business.jpg","https://i.ibb.co/JWBpyvhs/Screenshot-20260525-094649-Whats-App-Business.jpg","https://i.ibb.co/8LFTbZq3/Screenshot-20260525-094652-Whats-App-Business.jpg","https://i.ibb.co/qLDTvjTY/Screenshot-20260525-094728-Whats-App-Business.jpg","https://i.ibb.co/4gnbqFYC/Screenshot-20260525-094714-Whats-App-Business.jpg"] },
+      'diaries': { title: 'Diaries', images: ["https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg","https://i.ibb.co/TMCggctb/Screenshot-20260525-095303-Whats-App-Business.jpg","https://i.ibb.co/RThx2MC3/Screenshot-20260525-095315-Whats-App-Business.jpg","https://i.ibb.co/xq4cqvqp/Screenshot-20260525-095311-Whats-App-Business.jpg","https://i.ibb.co/7xyhQMKV/Screenshot-20260525-095318-Whats-App-Business.jpg","https://i.ibb.co/mFcs9rHb/Screenshot-20260525-095328-Whats-App-Business.jpg","https://i.ibb.co/0jzGJJHY/Screenshot-20260525-095325-Whats-App-Business.jpg","https://i.ibb.co/vxqqWBtX/Screenshot-20260525-095322-Whats-App-Business.jpg","https://i.ibb.co/JWsLWrrR/Screenshot-20260525-095349-Whats-App-Business.jpg","https://i.ibb.co/bY0Bwy5/Screenshot-20260525-095401-Whats-App-Business.jpg","https://i.ibb.co/Ng8rzY6d/Screenshot-20260525-095650-Whats-App-Business.jpg","https://i.ibb.co/tPMPZzMk/Screenshot-20260525-095653-Whats-App-Business.jpg","https://i.ibb.co/HDDcxm8X/Screenshot-20260525-095700-Whats-App-Business.jpg","https://i.ibb.co/R4Ctt70F/Screenshot-20260525-095657-Whats-App-Business.jpg"] },
+      'tshirts': { title: 'T-Shirts', images: ["https://i.ibb.co/TM7MtZDq/Screenshot-20260525-095707-Whats-App-Business.jpg","https://i.ibb.co/kk2Hrdw/Screenshot-20260525-095703-Whats-App-Business.jpg"] },
+      'key-holders': { title: 'Key Holders', images: ["https://i.ibb.co/RkTTg8rN/Screenshot-20260525-095646-Whats-App-Business.jpg","https://i.ibb.co/Y79DJhww/Screenshot-20260525-095642-Whats-App-Business.jpg"] },
+      'mugs': { title: 'Mugs', images: ["https://i.ibb.co/zhjxyx5f/Screenshot-20260525-095639-Whats-App-Business.jpg","https://i.ibb.co/Wpx7FZb3/Screenshot-20260525-095628-Whats-App-Business.jpg"] },
+      'neon': { title: 'Neon Lights', images: ["https://i.ibb.co/84s2VntF/Screenshot-20260525-095452-Whats-App-Business.jpg","https://i.ibb.co/VGsRHW7/Screenshot-20260525-095448-Whats-App-Business.jpg","https://i.ibb.co/5yYC513/Screenshot-20260525-095445-Whats-App-Business.jpg","https://i.ibb.co/HDP6gymc/Screenshot-20260525-095442-Whats-App-Business.jpg","https://i.ibb.co/W42qCrs2/Screenshot-20260525-095439-Whats-App-Business.jpg","https://i.ibb.co/4nM2m21G/Screenshot-20260525-095435-Whats-App-Business.jpg","https://i.ibb.co/qFJrGcj7/Screenshot-20260525-095432-Whats-App-Business.jpg","https://i.ibb.co/9kTs48wH/Screenshot-20260525-095428-Whats-App-Business.jpg","https://i.ibb.co/hxdQ56TP/Screenshot-20260525-095423-Whats-App-Business.jpg","https://i.ibb.co/JRXRxZZc/Screenshot-20260525-095417-Whats-App-Business.jpg"] },
+      'custom-crystal': { title: 'Customised Crystal Awards', images: ["https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg","https://i.ibb.co/srsDShh/Screenshot-20260525-094741-Whats-App-Business.jpg"] },
+      'custom-trophy': { title: 'Customised Trophy Award', images: ["https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg"] }
     };
 
     let currentCatImages = [];
@@ -881,28 +597,18 @@
 
     document.getElementById('lightbox').addEventListener('click', e => { if(e.target===e.currentTarget) closeLB(); });
 
-    // SEARCH
-    function searchAwards() {
-      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    function doSearch(query) {
       const resultsDiv = document.getElementById('searchResults');
       const grid = document.getElementById('searchGrid');
       const title = document.getElementById('searchTitle');
-
-      if(query.length < 2) {
-        resultsDiv.classList.remove('active');
-        return;
-      }
-
+      if(query.length < 2) { resultsDiv.classList.remove('active'); return; }
       const results = [];
       Object.keys(categories).forEach(key => {
         const cat = categories[key];
         if(cat.title.toLowerCase().includes(query)) {
-          cat.images.forEach((img, i) => {
-            results.push({ src: img, label: cat.title, catKey: key, idx: i });
-          });
+          cat.images.forEach((img, i) => results.push({ src: img, label: cat.title, catKey: key, idx: i }));
         }
       });
-
       if(results.length > 0) {
         title.textContent = `Results for "${query}" — ${results.length} items found`;
         grid.innerHTML = results.map((r, i) =>
@@ -911,18 +617,19 @@
             <div class="search-item-label">${r.label}</div>
           </div>`
         ).join('');
-        resultsDiv.classList.add('active');
-        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
-        title.textContent = `No results found for "${query}"`;
-        grid.innerHTML = '<p style="color:#444;font-size:13px;padding:20px 0">No awards found. Try searching: trophy, crystal, medal, wood, acrylic...</p>';
-        resultsDiv.classList.add('active');
+        title.textContent = `No results for "${query}"`;
+        grid.innerHTML = '<p style="color:#444;font-size:13px;padding:20px 0">Try: trophy, crystal, medal, wood, acrylic, neon, mug...</p>';
       }
+      resultsDiv.classList.add('active');
+      resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
+    function searchAwards() { doSearch(document.getElementById('searchInput').value.toLowerCase().trim()); }
+    function searchAwardsMobile() { doSearch(document.getElementById('searchInputMobile').value.toLowerCase().trim()); }
+
     function openSearchLB(i, imgs) {
-      currentCatImages = imgs;
-      lbIndex = i;
+      currentCatImages = imgs; lbIndex = i;
       document.getElementById('lbImg').src = imgs[i];
       document.getElementById('lbCounter').textContent = (i+1) + ' / ' + imgs.length;
       document.getElementById('lightbox').classList.add('active');
