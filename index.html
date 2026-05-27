@@ -41,23 +41,12 @@
     .nav-cta { color: var(--purple-light) !important; border: 1px solid var(--purple) !important; padding: 8px 20px; transition: all 0.3s !important; }
     .nav-cta:hover { background: var(--purple) !important; color: white !important; }
 
-    .search-wrap {
-      display: flex; align-items: center; gap: 10px;
-      background: rgba(123,47,190,0.08); border: 1px solid rgba(123,47,190,0.2);
-      padding: 8px 16px; border-radius: 3px;
-    }
+    .search-wrap { display: flex; align-items: center; gap: 10px; background: rgba(123,47,190,0.08); border: 1px solid rgba(123,47,190,0.2); padding: 8px 16px; border-radius: 3px; }
     .search-wrap input { background: none; border: none; outline: none; color: white; font-size: 12px; font-family: 'Montserrat', sans-serif; width: 180px; letter-spacing: 1px; }
     .search-wrap input::placeholder { color: #333; }
     .search-wrap i { color: var(--purple-light); font-size: 13px; }
 
-    /* MOBILE SEARCH */
-    .mobile-search {
-      display: none;
-      position: fixed; top: 76px; left: 0; right: 0; z-index: 999;
-      background: rgba(5,5,5,0.97);
-      border-bottom: 1px solid rgba(123,47,190,0.2);
-      padding: 12px 5%;
-    }
+    .mobile-search { display: none; position: fixed; top: 76px; left: 0; right: 0; z-index: 999; background: rgba(5,5,5,0.97); border-bottom: 1px solid rgba(123,47,190,0.2); padding: 12px 5%; }
     .mobile-search .search-wrap { width: 100%; }
     .mobile-search .search-wrap input { width: 100%; }
 
@@ -153,6 +142,8 @@
     .c-icon { width: 45px; height: 45px; flex-shrink: 0; border: 1px solid rgba(123,47,190,0.2); display: flex; align-items: center; justify-content: center; color: var(--purple-light); font-size: 16px; }
     .c-item h4 { color: #333; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
     .c-item p { color: white; font-size: 14px; font-weight: 500; }
+    .c-item a { color: white; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+    .c-item a:hover { color: var(--purple-light); }
     .contact-right { background: var(--card); border: 1px solid rgba(123,47,190,0.15); padding: 50px; position: relative; }
     .contact-right::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--purple), transparent); }
     .contact-right h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; margin-bottom: 15px; }
@@ -160,7 +151,7 @@
     .quote-box { background: rgba(123,47,190,0.05); border: 1px solid rgba(123,47,190,0.1); padding: 25px; margin-bottom: 25px; }
     .quote-box p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--purple-light); margin-bottom: 8px; }
     .quote-box span { color: #333; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
-    .social-row { display: flex; gap: 12px; margin-top: 20px; }
+    .social-row { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
     .s-btn { width: 45px; height: 45px; border: 1px solid rgba(123,47,190,0.2); display: flex; align-items: center; justify-content: center; color: #444; text-decoration: none; font-size: 16px; transition: all 0.3s; }
     .s-btn:hover { border-color: var(--purple); color: var(--purple-light); }
     .wa-btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: white; padding: 17px 40px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; width: 100%; justify-content: center; margin-top: 20px; }
@@ -207,7 +198,6 @@
     </ul>
   </nav>
 
-  <!-- MOBILE SEARCH BAR -->
   <div class="mobile-search">
     <div class="search-wrap">
       <i class="fas fa-search"></i>
@@ -246,177 +236,23 @@
       <p class="sec-sub">Click any category to explore our full collection of premium award pieces.</p>
     </div>
     <div class="cat-grid">
-
-      <div class="cat-card" onclick="openModal('trophies')">
-        <img src="https://i.ibb.co/nsgg3XnL/Screenshot-20260525-094247-Whats-App-Business.jpg" alt="Trophies">
-        <div class="cat-overlay">
-          <div class="cat-num">01</div>
-          <div class="cat-name">Trophies</div>
-          <div class="cat-desc">Timeless trophy pieces that immortalize achievement. Each trophy is crafted to stand as a lasting symbol of excellence, victory and recognition for every occasion.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('wooden-box')">
-        <img src="https://i.ibb.co/gM2fYKwY/Screenshot-20260525-094540-Whats-App-Business.jpg" alt="Wooden Box">
-        <div class="cat-overlay">
-          <div class="cat-num">02</div>
-          <div class="cat-name">Wooden Boxes</div>
-          <div class="cat-desc">Exquisitely crafted wooden presentation boxes that add a touch of natural elegance. Perfect for housing awards, gifts and keepsakes with a premium feel.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('crystal-trophy')">
-        <img src="https://i.ibb.co/TMJXH08L/Screenshot-20260525-095058-Whats-App-Business.jpg" alt="Crystal Trophy">
-        <div class="cat-overlay">
-          <div class="cat-num">03</div>
-          <div class="cat-name">Crystal Trophies</div>
-          <div class="cat-desc">Breathtaking crystal trophies that capture light and radiate prestige. A perfect fusion of artistry and recognition for the most distinguished ceremonies.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('medals')">
-        <img src="https://i.ibb.co/fdYJhqwS/Screenshot-20260525-094815-Whats-App-Business.jpg" alt="Medals">
-        <div class="cat-overlay">
-          <div class="cat-num">04</div>
-          <div class="cat-name">Medals</div>
-          <div class="cat-desc">Precision-engineered medals that honour achievement at its highest level. From sporting glory to academic distinction, our medals carry weight and lasting pride.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('crystal-awards')">
-        <img src="https://i.ibb.co/2184XYJ6/Screenshot-20260525-093823-Whats-App-Business.jpg" alt="Crystal Awards">
-        <div class="cat-overlay">
-          <div class="cat-num">05</div>
-          <div class="cat-name">Crystal Awards</div>
-          <div class="cat-desc">Where light meets legacy. Our crystal awards are sculpted from premium optical crystal, delivering brilliance that commands attention and communicates the highest honour.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('wood-awards')">
-        <img src="https://i.ibb.co/G4t03T86/Screenshot-20260525-093203-Whats-App-Business.jpg" alt="Wood Awards">
-        <div class="cat-overlay">
-          <div class="cat-num">06</div>
-          <div class="cat-name">Wood Awards</div>
-          <div class="cat-desc">Warmth, tradition and timeless beauty. Our wood awards combine natural elegance with precision engraving for a distinction that endures through generations.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('cup-trophy')">
-        <img src="https://i.ibb.co/sJbdGQQd/Screenshot-20260525-095610-Whats-App-Business.jpg" alt="Cup Trophy">
-        <div class="cat-overlay">
-          <div class="cat-num">07</div>
-          <div class="cat-name">Cup Trophy Awards</div>
-          <div class="cat-desc">The ultimate symbol of victory. Our cup trophies embody championship spirit with bold, commanding designs that proudly display the name of every winner.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('3d-awards')">
-        <img src="https://i.ibb.co/twms1HdR/Screenshot-20260525-094326-Whats-App-Business.jpg" alt="3D Awards">
-        <div class="cat-overlay">
-          <div class="cat-num">08</div>
-          <div class="cat-name">3D Awards</div>
-          <div class="cat-desc">Innovation meets recognition. Our 3D awards bring dimension and depth to achievement, creating striking pieces that stand out and leave a powerful lasting impression.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('acrylic-awards')">
-        <img src="https://i.ibb.co/TxCZCPF3/Screenshot-20260525-092911-Whats-App-Business.jpg" alt="Acrylic Awards">
-        <div class="cat-overlay">
-          <div class="cat-num">09</div>
-          <div class="cat-name">Acrylic Awards</div>
-          <div class="cat-desc">Sleek, modern and bold. Our acrylic awards deliver contemporary elegance with crystal-clear clarity, ideal for corporate recognitions and modern ceremonies.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('throw-pillows')">
-        <img src="https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg" alt="Throw Pillows">
-        <div class="cat-overlay">
-          <div class="cat-num">10</div>
-          <div class="cat-name">Throw Pillows</div>
-          <div class="cat-desc">Premium customised throw pillows that blend comfort with brand identity. Perfect for corporate gifting, branded spaces and event giveaways.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('diaries')">
-        <img src="https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg" alt="Diaries">
-        <div class="cat-overlay">
-          <div class="cat-num">11</div>
-          <div class="cat-name">Diaries</div>
-          <div class="cat-desc">Elegantly branded diaries and premium notebooks for the discerning professional. A refined gift combining utility with a lasting expression of prestige.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('tshirts')">
-        <img src="https://i.ibb.co/TM7MtZDq/Screenshot-20260525-095707-Whats-App-Business.jpg" alt="T-Shirts">
-        <div class="cat-overlay">
-          <div class="cat-num">12</div>
-          <div class="cat-name">T-Shirts</div>
-          <div class="cat-desc">Custom branded T-shirts for events, corporate identity and team uniforms. Quality fabric meets premium printing for a look that represents your brand with pride.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('key-holders')">
-        <img src="https://i.ibb.co/RkTTg8rN/Screenshot-20260525-095646-Whats-App-Business.jpg" alt="Key Holders">
-        <div class="cat-overlay">
-          <div class="cat-num">13</div>
-          <div class="cat-name">Key Holders</div>
-          <div class="cat-desc">Premium branded key holders that make an everyday item feel exclusive. A sophisticated corporate gift that keeps your brand visible and valued every day.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('mugs')">
-        <img src="https://i.ibb.co/zhjxyx5f/Screenshot-20260525-095639-Whats-App-Business.jpg" alt="Mugs">
-        <div class="cat-overlay">
-          <div class="cat-num">14</div>
-          <div class="cat-name">Mugs</div>
-          <div class="cat-desc">Custom branded mugs that turn every morning into a brand moment. High-quality ceramic with premium full-colour printing, perfect for gifting and corporate identity.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('neon')">
-        <img src="https://i.ibb.co/84s2VntF/Screenshot-20260525-095452-Whats-App-Business.jpg" alt="Neon Lights">
-        <div class="cat-overlay">
-          <div class="cat-num">15</div>
-          <div class="cat-name">Neon Lights</div>
-          <div class="cat-desc">Vibrant custom neon light displays that illuminate your brand, event or space with personality. Our neon pieces transform any environment into an experience.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('custom-crystal')">
-        <img src="https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg" alt="Customised Crystal Awards">
-        <div class="cat-overlay">
-          <div class="cat-num">16</div>
-          <div class="cat-name">Customised Crystal Awards</div>
-          <div class="cat-desc">Bespoke crystal award pieces designed exclusively to your specification. Every curve, inscription and detail crafted with precision to create a one-of-a-kind symbol of honour.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="openModal('custom-trophy')">
-        <img src="https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg" alt="Customised Trophy Award">
-        <div class="cat-overlay">
-          <div class="cat-num">17</div>
-          <div class="cat-name">Customised Trophy Award</div>
-          <div class="cat-desc">Fully bespoke trophy designs built from the ground up to match your exact vision. No templates, no limits — pure craftsmanship delivering a trophy as unique as the achievement.</div>
-          <div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
+      <div class="cat-card" onclick="openModal('trophies')"><img src="https://i.ibb.co/nsgg3XnL/Screenshot-20260525-094247-Whats-App-Business.jpg" alt="Trophies"><div class="cat-overlay"><div class="cat-num">01</div><div class="cat-name">Trophies</div><div class="cat-desc">Timeless trophy pieces that immortalize achievement. Each trophy is crafted to stand as a lasting symbol of excellence, victory and recognition for every occasion.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('wooden-box')"><img src="https://i.ibb.co/gM2fYKwY/Screenshot-20260525-094540-Whats-App-Business.jpg" alt="Wooden Box"><div class="cat-overlay"><div class="cat-num">02</div><div class="cat-name">Wooden Boxes</div><div class="cat-desc">Exquisitely crafted wooden presentation boxes that add natural elegance. Perfect for housing awards, gifts and keepsakes with a premium feel.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('crystal-trophy')"><img src="https://i.ibb.co/TMJXH08L/Screenshot-20260525-095058-Whats-App-Business.jpg" alt="Crystal Trophy"><div class="cat-overlay"><div class="cat-num">03</div><div class="cat-name">Crystal Trophies</div><div class="cat-desc">Breathtaking crystal trophies that capture light and radiate prestige. A perfect fusion of artistry and recognition for the most distinguished ceremonies.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('medals')"><img src="https://i.ibb.co/fdYJhqwS/Screenshot-20260525-094815-Whats-App-Business.jpg" alt="Medals"><div class="cat-overlay"><div class="cat-num">04</div><div class="cat-name">Medals</div><div class="cat-desc">Precision-engineered medals that honour achievement at its highest level. From sporting glory to academic distinction, our medals carry weight and lasting pride.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('crystal-awards')"><img src="https://i.ibb.co/2184XYJ6/Screenshot-20260525-093823-Whats-App-Business.jpg" alt="Crystal Awards"><div class="cat-overlay"><div class="cat-num">05</div><div class="cat-name">Crystal Awards</div><div class="cat-desc">Where light meets legacy. Sculpted from premium optical crystal, delivering brilliance that commands attention and communicates the highest honour.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('wood-awards')"><img src="https://i.ibb.co/G4t03T86/Screenshot-20260525-093203-Whats-App-Business.jpg" alt="Wood Awards"><div class="cat-overlay"><div class="cat-num">06</div><div class="cat-name">Wood Awards</div><div class="cat-desc">Warmth, tradition and timeless beauty. Our wood awards combine natural elegance with precision engraving for a distinction that endures through generations.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('cup-trophy')"><img src="https://i.ibb.co/sJbdGQQd/Screenshot-20260525-095610-Whats-App-Business.jpg" alt="Cup Trophy"><div class="cat-overlay"><div class="cat-num">07</div><div class="cat-name">Cup Trophy Awards</div><div class="cat-desc">The ultimate symbol of victory. Our cup trophies embody championship spirit with bold commanding designs that proudly display the name of every winner.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('3d-awards')"><img src="https://i.ibb.co/twms1HdR/Screenshot-20260525-094326-Whats-App-Business.jpg" alt="3D Awards"><div class="cat-overlay"><div class="cat-num">08</div><div class="cat-name">3D Awards</div><div class="cat-desc">Innovation meets recognition. Our 3D awards bring dimension and depth to achievement, creating striking pieces that leave a powerful lasting impression.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('acrylic-awards')"><img src="https://i.ibb.co/TxCZCPF3/Screenshot-20260525-092911-Whats-App-Business.jpg" alt="Acrylic Awards"><div class="cat-overlay"><div class="cat-num">09</div><div class="cat-name">Acrylic Awards</div><div class="cat-desc">Sleek, modern and bold. Our acrylic awards deliver contemporary elegance with crystal-clear clarity, ideal for corporate recognitions and modern ceremonies.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('throw-pillows')"><img src="https://i.ibb.co/LhNzGZCC/Screenshot-20260525-094711-Whats-App-Business.jpg" alt="Throw Pillows"><div class="cat-overlay"><div class="cat-num">10</div><div class="cat-name">Throw Pillows</div><div class="cat-desc">Premium customised throw pillows that blend comfort with brand identity. Perfect for corporate gifting, branded spaces and event giveaways.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('diaries')"><img src="https://i.ibb.co/Y74f4Dtb/Screenshot-20260525-095307-Whats-App-Business.jpg" alt="Diaries"><div class="cat-overlay"><div class="cat-num">11</div><div class="cat-name">Diaries</div><div class="cat-desc">Elegantly branded diaries and premium notebooks for the discerning professional. A refined gift combining utility with a lasting expression of prestige.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('tshirts')"><img src="https://i.ibb.co/TM7MtZDq/Screenshot-20260525-095707-Whats-App-Business.jpg" alt="T-Shirts"><div class="cat-overlay"><div class="cat-num">12</div><div class="cat-name">T-Shirts</div><div class="cat-desc">Custom branded T-shirts for events, corporate identity and team uniforms. Quality fabric meets premium printing for a look that represents your brand with pride.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('key-holders')"><img src="https://i.ibb.co/RkTTg8rN/Screenshot-20260525-095646-Whats-App-Business.jpg" alt="Key Holders"><div class="cat-overlay"><div class="cat-num">13</div><div class="cat-name">Key Holders</div><div class="cat-desc">Premium branded key holders that make an everyday item feel exclusive. A sophisticated corporate gift that keeps your brand visible every day.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('mugs')"><img src="https://i.ibb.co/zhjxyx5f/Screenshot-20260525-095639-Whats-App-Business.jpg" alt="Mugs"><div class="cat-overlay"><div class="cat-num">14</div><div class="cat-name">Mugs</div><div class="cat-desc">Custom branded mugs that turn every morning into a brand moment. High-quality ceramic with premium full-colour printing, perfect for gifting and corporate identity.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('neon')"><img src="https://i.ibb.co/84s2VntF/Screenshot-20260525-095452-Whats-App-Business.jpg" alt="Neon Lights"><div class="cat-overlay"><div class="cat-num">15</div><div class="cat-name">Neon Lights</div><div class="cat-desc">Vibrant custom neon light displays that illuminate your brand, event or space with personality. Our neon pieces transform any environment into an experience.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('custom-crystal')"><img src="https://i.ibb.co/C36vLP7Y/Screenshot-20260525-094745-Whats-App-Business.jpg" alt="Customised Crystal Awards"><div class="cat-overlay"><div class="cat-num">16</div><div class="cat-name">Customised Crystal Awards</div><div class="cat-desc">Bespoke crystal award pieces designed exclusively to your specification. Every curve and inscription crafted with precision to create a one-of-a-kind symbol of honour.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
+      <div class="cat-card" onclick="openModal('custom-trophy')"><img src="https://i.ibb.co/jkPFVYMv/Screenshot-20260525-095508-Whats-App-Business.jpg" alt="Customised Trophy Award"><div class="cat-overlay"><div class="cat-num">17</div><div class="cat-name">Customised Trophy Award</div><div class="cat-desc">Fully bespoke trophy designs built from the ground up to match your exact vision. Pure craftsmanship delivering a trophy as unique as the achievement it represents.</div><div class="cat-btn">Explore Collection <i class="fas fa-arrow-right"></i></div></div></div>
     </div>
   </section>
 
@@ -431,22 +267,10 @@
         <a href="#contact" class="btn-purple" style="margin-top:15px;display:inline-block">Commission Your Award</a>
       </div>
       <div class="features">
-        <div class="feat-item">
-          <div class="feat-icon"><i class="fas fa-gem"></i></div>
-          <div><h4>Premium Materials</h4><p>Crystal, glass, acrylic, metal and premium wood — only the finest materials create true distinction.</p></div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-icon"><i class="fas fa-paint-brush"></i></div>
-          <div><h4>Bespoke Design</h4><p>Every award custom-designed to reflect your organization's unique vision, values and identity.</p></div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-icon"><i class="fas fa-building"></i></div>
-          <div><h4>Corporate Excellence</h4><p>Trusted by corporate organizations, institutions and high-profile ceremonies across Nigeria.</p></div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-icon"><i class="fas fa-certificate"></i></div>
-          <div><h4>Precision Engraving</h4><p>State-of-the-art engraving ensures every name, logo and achievement is captured with perfection.</p></div>
-        </div>
+        <div class="feat-item"><div class="feat-icon"><i class="fas fa-gem"></i></div><div><h4>Premium Materials</h4><p>Crystal, glass, acrylic, metal and premium wood — only the finest materials create true distinction.</p></div></div>
+        <div class="feat-item"><div class="feat-icon"><i class="fas fa-paint-brush"></i></div><div><h4>Bespoke Design</h4><p>Every award custom-designed to reflect your organization's unique vision, values and identity.</p></div></div>
+        <div class="feat-item"><div class="feat-icon"><i class="fas fa-building"></i></div><div><h4>Corporate Excellence</h4><p>Trusted by corporate organizations, institutions and high-profile ceremonies across Nigeria.</p></div></div>
+        <div class="feat-item"><div class="feat-icon"><i class="fas fa-certificate"></i></div><div><h4>Precision Engraving</h4><p>State-of-the-art engraving ensures every name, logo and achievement is captured with perfection.</p></div></div>
       </div>
     </div>
   </section>
@@ -465,21 +289,38 @@
         <div class="c-info">
           <div class="c-item">
             <div class="c-icon"><i class="fas fa-phone"></i></div>
-            <div><h4>Phone & WhatsApp</h4><p>+234 706 742 3913</p></div>
+            <div>
+              <h4>Phone & WhatsApp</h4>
+              <a href="tel:+2347067423913">+234 706 742 3913</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:awardsemporiumintl@gmail.com">awardsemporiumintl@gmail.com</a>
+            </div>
           </div>
           <div class="c-item">
             <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div><h4>Location</h4><p>Lagos, Nigeria</p></div>
+            <div>
+              <h4>Location — Click to Open Map</h4>
+              <a href="https://www.google.com/maps/search/Premium+Awards+Emporium+Lagos+Nigeria" target="_blank">Lagos, Nigeria — View on Google Maps</a>
+            </div>
           </div>
           <div class="c-item">
             <div class="c-icon"><i class="fas fa-clock"></i></div>
-            <div><h4>Availability</h4><p>Available for inquiries & custom orders</p></div>
+            <div>
+              <h4>Availability</h4>
+              <p>Available for inquiries & custom orders</p>
+            </div>
           </div>
         </div>
         <div class="social-row">
-          <a href="https://wa.me/2347067423913" class="s-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="s-btn" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="s-btn" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/2347067423913" class="s-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp" style="color:#25D366"></i></a>
+          <a href="https://www.instagram.com/awardsempire?igsh=eThobHlweGhtc2h0" class="s-btn" target="_blank" title="Instagram"><i class="fab fa-instagram" style="color:#E1306C"></i></a>
+          <a href="https://www.facebook.com/share/1Bevku9oNq" class="s-btn" target="_blank" title="Facebook"><i class="fab fa-facebook" style="color:#1877F2"></i></a>
+          <a href="mailto:awardsemporiumintl@gmail.com" class="s-btn" target="_blank" title="Email"><i class="fas fa-envelope" style="color:var(--purple-light)"></i></a>
         </div>
       </div>
       <div class="contact-right">
@@ -492,12 +333,18 @@
         <a href="https://wa.me/2347067423913" class="wa-btn" target="_blank">
           <i class="fab fa-whatsapp"></i> Request a Quote on WhatsApp
         </a>
+        <a href="mailto:awardsemporiumintl@gmail.com" class="wa-btn" target="_blank" style="margin-top:12px;background:rgba(123,47,190,0.2);border:1px solid rgba(123,47,190,0.3)">
+          <i class="fas fa-envelope"></i> Send Us an Email
+        </a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-logo">Premium Awards Emporium</div>
+    <div class="logo-area" style="gap:10px">
+      <img src="https://i.ibb.co/21Rvj8mZ/IMG-20260526-WA0007.jpg" style="width:35px;height:35px;border-radius:50%;object-fit:contain;border:1px solid rgba(123,47,190,0.3)" alt="logo">
+      <div class="footer-logo">Premium Awards Emporium</div>
+    </div>
     <p>© 2025 <span>Premium Awards Emporium</span> — Lagos, Nigeria</p>
     <p>Website by <span>Owosam Branding</span> 🔥</p>
   </footer>
@@ -525,15 +372,7 @@
 
   <script>
     const pc = document.getElementById('particles');
-    for(let i=0;i<25;i++){
-      const p=document.createElement('div');
-      p.className='particle';
-      p.style.left=Math.random()*100+'%';
-      p.style.animationDuration=(Math.random()*12+8)+'s';
-      p.style.animationDelay=(Math.random()*12)+'s';
-      p.style.width=p.style.height=(Math.random()*3+1)+'px';
-      pc.appendChild(p);
-    }
+    for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(Math.random()*12+8)+'s';p.style.animationDelay=(Math.random()*12)+'s';p.style.width=p.style.height=(Math.random()*3+1)+'px';pc.appendChild(p);}
 
     const categories = {
       'trophies': { title: 'Trophies', images: ["https://i.ibb.co/VYK2XGss/Screenshot-20260525-095246-Whats-App-Business.jpg","https://i.ibb.co/CsH1PBM3/Screenshot-20260525-095243-Whats-App-Business.jpg","https://i.ibb.co/mrf2FTYR/Screenshot-20260525-095240-Whats-App-Business.jpg","https://i.ibb.co/gFRnCk8H/Screenshot-20260525-095232-Whats-App-Business.jpg","https://i.ibb.co/vvVX71Z0/Screenshot-20260525-095229-Whats-App-Business.jpg","https://i.ibb.co/V0YGWRv2/Screenshot-20260525-095226-Whats-App-Business.jpg","https://i.ibb.co/TxcGXVkc/Screenshot-20260525-095222-Whats-App-Business.jpg","https://i.ibb.co/fYL5Xm3b/Screenshot-20260525-095218-Whats-App-Business.jpg","https://i.ibb.co/4ZQxSnx0/Screenshot-20260525-095211-Whats-App-Business.jpg","https://i.ibb.co/YFqm8t6P/Screenshot-20260525-095207-Whats-App-Business.jpg","https://i.ibb.co/CpLxC5DP/Screenshot-20260525-095148-Whats-App-Business.jpg","https://i.ibb.co/G4TbGTK0/Screenshot-20260525-095144-Whats-App-Business.jpg","https://i.ibb.co/Cp5qM4BH/Screenshot-20260525-095141-Whats-App-Business.jpg","https://i.ibb.co/VcptDfSy/Screenshot-20260525-095137-Whats-App-Business.jpg","https://i.ibb.co/xK4p4K5f/Screenshot-20260525-095134-Whats-App-Business.jpg","https://i.ibb.co/HLgg4bWL/Screenshot-20260525-095131-Whats-App-Business.jpg","https://i.ibb.co/fdRCH7F9/Screenshot-20260525-095128-Whats-App-Business.jpg","https://i.ibb.co/Q3JH9BWz/Screenshot-20260525-095125-Whats-App-Business.jpg","https://i.ibb.co/yn8DjLhh/Screenshot-20260525-095121-Whats-App-Business.jpg","https://i.ibb.co/dJ253Mzn/Screenshot-20260525-095113-Whats-App-Business.jpg","https://i.ibb.co/5gsjD49t/Screenshot-20260525-095008-Whats-App-Business.jpg","https://i.ibb.co/yngBNxnD/Screenshot-20260525-095004-Whats-App-Business.jpg","https://i.ibb.co/JF71hCBP/Screenshot-20260525-094957-Whats-App-Business.jpg","https://i.ibb.co/4wLvzMjn/Screenshot-20260525-094953-Whats-App-Business.jpg","https://i.ibb.co/tpPyNcRq/Screenshot-20260525-094949-Whats-App-Business.jpg","https://i.ibb.co/4ZwZLYkq/Screenshot-20260525-094945-Whats-App-Business.jpg","https://i.ibb.co/5mckvmz/Screenshot-20260525-094942-Whats-App-Business.jpg","https://i.ibb.co/QjvL7988/Screenshot-20260525-094937-Whats-App-Business.jpg","https://i.ibb.co/R4SQwm9h/Screenshot-20260525-094904-Whats-App-Business.jpg","https://i.ibb.co/dst40sfH/Screenshot-20260525-094255-Whats-App-Business.jpg","https://i.ibb.co/MmtJqYh/Screenshot-20260525-094247-Whats-App-Business.jpg","https://i.ibb.co/KjgLVBgP/Screenshot-20260525-094241-Whats-App-Business.jpg","https://i.ibb.co/7d5pDPnS/Screenshot-20260525-094230-Whats-App-Business.jpg","https://i.ibb.co/35mKf9vt/Screenshot-20260525-094227-Whats-App-Business.jpg","https://i.ibb.co/0ydwngDz/Screenshot-20260525-094223-Whats-App-Business.jpg","https://i.ibb.co/4RVV8hCb/Screenshot-20260525-094220-Whats-App-Business.jpg","https://i.ibb.co/Mw5FWJP/Screenshot-20260525-094217-Whats-App-Business.jpg","https://i.ibb.co/YBsqbf8V/Screenshot-20260525-094212-Whats-App-Business.jpg","https://i.ibb.co/G3sJ4WLr/Screenshot-20260525-094156-Whats-App-Business.jpg","https://i.ibb.co/d4t9ZZXg/Screenshot-20260525-094154-Whats-App-Business.jpg","https://i.ibb.co/xKNryk60/Screenshot-20260525-094151-Whats-App-Business.jpg","https://i.ibb.co/NnNNVc7N/Screenshot-20260525-094147-Whats-App-Business.jpg","https://i.ibb.co/23J7KwHt/Screenshot-20260525-094144-Whats-App-Business.jpg","https://i.ibb.co/1GB5vD3t/Screenshot-20260525-094141-Whats-App-Business.jpg","https://i.ibb.co/pv9SppBR/Screenshot-20260525-094137-Whats-App-Business.jpg","https://i.ibb.co/dsKws3sB/Screenshot-20260525-094125-Whats-App-Business.jpg","https://i.ibb.co/9HTzxKxz/Screenshot-20260525-094122-Whats-App-Business.jpg","https://i.ibb.co/4Rxp0ncH/Screenshot-20260525-094017-Whats-App-Business.jpg","https://i.ibb.co/b9FHY0r/Screenshot-20260525-094013-Whats-App-Business.jpg","https://i.ibb.co/S4Xsd5tQ/Screenshot-20260525-094004-Whats-App-Business.jpg","https://i.ibb.co/7t6nFZFZ/Screenshot-20260525-093959-Whats-App-Business.jpg","https://i.ibb.co/dJrzRtNm/Screenshot-20260525-093953-Whats-App-Business.jpg","https://i.ibb.co/TqYwwCNy/Screenshot-20260525-093947-Whats-App-Business.jpg","https://i.ibb.co/TBt5Fm4w/Screenshot-20260525-093943-Whats-App-Business.jpg","https://i.ibb.co/C5D4sCCT/Screenshot-20260525-093939-Whats-App-Business.jpg","https://i.ibb.co/YSZx3Kp/Screenshot-20260525-093932-Whats-App-Business.jpg","https://i.ibb.co/QFCkd5Vf/Screenshot-20260525-093923-Whats-App-Business.jpg"] },
@@ -563,19 +402,14 @@
       document.getElementById('modalTitle').textContent = data.title;
       const grid = document.getElementById('modalGrid');
       grid.innerHTML = data.images.map((src, i) =>
-        `<div class="modal-item" onclick="openLB(${i},'${cat}')">
-          <img src="${src}" alt="${data.title} ${i+1}" loading="lazy">
-        </div>`
+        `<div class="modal-item" onclick="openLB(${i},'${cat}')"><img src="${src}" alt="${data.title} ${i+1}" loading="lazy"></div>`
       ).join('');
       currentCatImages = data.images;
       document.getElementById('modal').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeModal() {
-      document.getElementById('modal').classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
 
     function openLB(i, cat) {
       lbIndex = i;
@@ -585,9 +419,7 @@
       document.getElementById('lightbox').classList.add('active');
     }
 
-    function closeLB() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
+    function closeLB() { document.getElementById('lightbox').classList.remove('active'); }
 
     function changeLB(d) {
       lbIndex = (lbIndex + d + currentCatImages.length) % currentCatImages.length;
@@ -612,10 +444,7 @@
       if(results.length > 0) {
         title.textContent = `Results for "${query}" — ${results.length} items found`;
         grid.innerHTML = results.map((r, i) =>
-          `<div class="search-item" onclick="openSearchLB(${i}, ${JSON.stringify(results.map(x=>x.src))})">
-            <img src="${r.src}" alt="${r.label}" loading="lazy">
-            <div class="search-item-label">${r.label}</div>
-          </div>`
+          `<div class="search-item" onclick="openSearchLB(${i}, ${JSON.stringify(results.map(x=>x.src))})"><img src="${r.src}" alt="${r.label}" loading="lazy"><div class="search-item-label">${r.label}</div></div>`
         ).join('');
       } else {
         title.textContent = `No results for "${query}"`;
